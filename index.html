@@ -1503,8 +1503,14 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
     document.getElementById('page-' + name).classList.add('active');
-    document.getElementById('link-' + name).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const linkElement = document.getElementById('link-' + name);
+    if (linkElement) {
+      linkElement.classList.add('active');
+    }
+    // Scroll to top with a small delay to ensure page is visible
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
     return false;
   }
 
