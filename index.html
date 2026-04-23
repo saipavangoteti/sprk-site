@@ -1507,10 +1507,11 @@
     if (linkElement) {
       linkElement.classList.add('active');
     }
-    // Scroll to top with a small delay to ensure page is visible
+    // Scroll to top immediately and ensure it happens
+    window.scrollTo(0, 0);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
+    }, 50);
     return false;
   }
 
