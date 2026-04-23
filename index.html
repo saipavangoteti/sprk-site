@@ -669,6 +669,46 @@
   .btn-submit:hover::before { transform: translateX(100%); }
   .btn-submit:hover { filter: brightness(1.1); }
 
+  /* Demo Button */
+  .svc-demo-btn {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .btn-demo {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 48px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--silver-light);
+    text-decoration: none;
+    border: 2px solid rgba(180,180,180,0.3);
+    background: linear-gradient(135deg, rgba(180,180,180,0.08), rgba(200,200,200,0.12));
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: none;
+  }
+
+  .btn-demo::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+
+  .btn-demo:hover::before { transform: translateX(100%); }
+  .btn-demo:hover { 
+    border-color: rgba(180,180,180,0.6); 
+    color: #fff;
+    background: linear-gradient(135deg, rgba(180,180,180,0.15), rgba(200,200,200,0.2));
+    transform: translateY(-2px);
+  }
+
   /* Toast */
   .toast {
     position: fixed;
@@ -1083,6 +1123,12 @@
       <span class="glass-text" data-text="CHATBOTS">CHATBOTS</span>
     </h1>
     <p class="svc-intro">Custom-built conversational AI that handles your customers, qualifies your leads, and never sleeps. Trained on your business data. Deployed on your terms.</p>
+    <div class="svc-demo-btn">
+      <a href="https://gharbot.streamlit.app" target="_blank" class="btn btn-demo">
+        Demo-Try Now
+        <span>→</span>
+      </a>
+    </div>
   </section>
 
   <section class="case-studies">
