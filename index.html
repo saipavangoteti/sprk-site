@@ -471,6 +471,21 @@
     display: flex;
     align-items: center; justify-content: space-between;
   }
+  .footer-links {
+    display: flex; gap: 32px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--silver-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: none;
+  }
+  .footer-links a:hover { color: var(--silver-light); }
   .footer-logo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.4rem;
@@ -801,7 +816,8 @@
     .statement { flex-direction: column; padding: 80px 28px; }
     .values { grid-template-columns: 1fr; padding: 0 28px 60px; }
     .about-hero, .contact-section { padding-left: 28px; padding-right: 28px; }
-    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px; }
+    .footer-links { gap: 20px; justify-content: center; }
   }
 </style>
 </head>
@@ -926,6 +942,11 @@
 
   <footer>
     <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
     <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
   </footer>
 
@@ -1031,6 +1052,11 @@
 
   <footer>
     <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
     <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
   </footer>
 
@@ -1109,6 +1135,11 @@
 
   <footer>
     <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
     <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
   </footer>
 </div>
@@ -1185,6 +1216,11 @@
 
   <footer>
     <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
     <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
   </footer>
 </div>
@@ -1262,6 +1298,180 @@
 
   <footer>
     <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
+    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
+  </footer>
+</div>
+
+<!-- ===== PRIVACY POLICY PAGE ===== -->
+<div class="page" id="page-privacy">
+  <section class="legal-hero">
+    <a href="#" class="back-link" onclick="showPage('home')">← Back</a>
+    <p class="about-eyebrow">Policies</p>
+    <h1 class="about-title">
+      <span class="glass-text" data-text="PRIVACY">PRIVACY</span><br>
+      <span class="glass-text" data-text="POLICY">POLICY</span>
+    </h1>
+    <p class="legal-date">Last updated: June 2026</p>
+  </section>
+
+  <section class="legal-body">
+    <div class="legal-content">
+      <h3>1. Information We Collect</h3>
+      <p>When you use our contact form or engage our services, we collect the following information:</p>
+      <ul>
+        <li><strong>Personal Identification:</strong> Name, email address, phone number.</li>
+        <li><strong>Service Preferences:</strong> The type of service you are interested in (resume optimization, AI chatbot, website development).</li>
+        <li><strong>Communications:</strong> Messages and inquiries you send through our contact form.</li>
+      </ul>
+
+      <h3>2. How We Use Your Information</h3>
+      <p>We use the collected information solely to:</p>
+      <ul>
+        <li>Respond to your inquiries and service requests.</li>
+        <li>Deliver the services you have requested.</li>
+        <li>Communicate with you regarding your project or order.</li>
+        <li>Improve our services based on feedback.</li>
+      </ul>
+
+      <h3>3. Data Protection</h3>
+      <p>We implement appropriate security measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Your data is stored securely and accessed only by authorized personnel.</p>
+
+      <h3>4. Data Sharing</h3>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share your data only with trusted service providers who assist us in operating our business, provided they agree to keep your information confidential.</p>
+
+      <h3>5. Data Retention</h3>
+      <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy, or as required by applicable law.</p>
+
+      <h3>6. Your Rights</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request access to the personal data we hold about you.</li>
+        <li>Request correction or deletion of your data.</li>
+        <li>Withdraw consent at any time where we rely on your consent to process your data.</li>
+      </ul>
+      <p>To exercise these rights, please contact us at the information provided on our About Us page.</p>
+
+      <h3>7. Contact</h3>
+      <p>For questions about this Privacy Policy, reach us at +91 91827 89496 or through our contact form.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
+    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
+  </footer>
+</div>
+
+<!-- ===== TERMS OF SERVICE PAGE ===== -->
+<div class="page" id="page-terms">
+  <section class="legal-hero">
+    <a href="#" class="back-link" onclick="showPage('home')">← Back</a>
+    <p class="about-eyebrow">Policies</p>
+    <h1 class="about-title">
+      <span class="glass-text" data-text="TERMS OF">TERMS OF</span><br>
+      <span class="glass-text" data-text="SERVICE">SERVICE</span>
+    </h1>
+    <p class="legal-date">Last updated: June 2026</p>
+  </section>
+
+  <section class="legal-body">
+    <div class="legal-content">
+      <h3>1. Acceptance of Terms</h3>
+      <p>By accessing or using the SPRK website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.</p>
+
+      <h3>2. Services Description</h3>
+      <p>SPRK provides digital services including ATS resume optimization, AI chatbot development, and premium website development. All services are delivered as described in the relevant service pages.</p>
+
+      <h3>3. User Obligations</h3>
+      <p>You agree to:</p>
+      <ul>
+        <li>Provide accurate and complete information when using our contact form or services.</li>
+        <li>Use our services only for lawful purposes.</li>
+        <li>Not engage in any activity that interferes with or disrupts our website or services.</li>
+      </ul>
+
+      <h3>4. Intellectual Property</h3>
+      <p>All content on this website, including text, graphics, logos, and design, is the property of SPRK unless otherwise stated. Upon full payment for services, deliverables are transferred to the client as agreed in the project scope.</p>
+
+      <h3>5. Limitation of Liability</h3>
+      <p>SPRK shall not be liable for any indirect, incidental, or consequential damages arising from the use or inability to use our services. Our total liability for any claim shall not exceed the amount paid by you for the specific service giving rise to the claim.</p>
+
+      <h3>6. Payment Terms</h3>
+      <p>Payment terms are as agreed upon during project onboarding. All fees are non-refundable except as explicitly stated in our Refund Policy.</p>
+
+      <h3>7. Modifications</h3>
+      <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to this page. Continued use of our services after changes constitutes acceptance of the new terms.</p>
+
+      <h3>8. Contact</h3>
+      <p>For questions regarding these terms, contact us at +91 91827 89496.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
+    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
+  </footer>
+</div>
+
+<!-- ===== REFUND POLICY PAGE ===== -->
+<div class="page" id="page-refund">
+  <section class="legal-hero">
+    <a href="#" class="back-link" onclick="showPage('home')">← Back</a>
+    <p class="about-eyebrow">Policies</p>
+    <h1 class="about-title">
+      <span class="glass-text" data-text="REFUND">REFUND</span><br>
+      <span class="glass-text" data-text="POLICY">POLICY</span>
+    </h1>
+    <p class="legal-date">Last updated: June 2026</p>
+  </section>
+
+  <section class="legal-body">
+    <div class="legal-content">
+      <h3>1. Service-Based Refunds</h3>
+      <p>Since SPRK provides digital services (resume writing, software development, and consulting), refunds are handled on a case-by-case basis depending on the project stage:</p>
+
+      <h3>2. Before Work Begins</h3>
+      <p>If you cancel your order before any work has commenced, you are eligible for a full refund of any amount paid.</p>
+
+      <h3>3. After Work Has Started</h3>
+      <p>If work has begun but the project is not yet delivered, refunds are assessed based on the percentage of work completed. You will be refunded for the uncompleted portion minus any reasonable administrative fees.</p>
+
+      <h3>4. Completed Deliverables</h3>
+      <p>Once a service deliverable has been completed and delivered to you, refunds are not applicable unless the deliverable does not meet the agreed-upon specifications outlined in the project scope.</p>
+
+      <h3>5. Dispute Resolution</h3>
+      <p>If you believe a deliverable does not meet the agreed specifications, contact us within 7 days of delivery. We will review your concern and offer revisions at no additional cost. If the issue cannot be resolved, a partial or full refund may be issued at our discretion.</p>
+
+      <h3>6. Processing Time</h3>
+      <p>Approved refunds will be processed within 7-14 business days and credited to the original payment method.</p>
+
+      <h3>7. Contact</h3>
+      <p>For refund requests or questions, contact us at +91 91827 89496.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">SPRK</div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('privacy')">Privacy</a>
+      <a href="#" onclick="showPage('terms')">Terms</a>
+      <a href="#" onclick="showPage('refund')">Refunds</a>
+    </div>
     <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
   </footer>
 </div>
@@ -1454,10 +1664,77 @@
     letter-spacing: 0.2em;
   }
 
+  /* LEGAL PAGES */
+  .legal-hero {
+    padding: 160px 60px 60px;
+    position: relative; overflow: hidden;
+  }
+  .legal-hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 600px; height: 100%;
+    background: repeating-linear-gradient(-12deg, transparent, transparent 28px, rgba(150,150,150,0.02) 28px, rgba(150,150,150,0.02) 29px);
+    pointer-events: none;
+  }
+  .legal-date {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--silver-dim);
+    margin-top: 16px;
+  }
+  .legal-body {
+    padding: 0 60px 120px;
+    max-width: 800px;
+  }
+  .legal-content h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--silver-light);
+    margin-top: 48px;
+    margin-bottom: 12px;
+  }
+  .legal-content h3:first-child { margin-top: 0; }
+  .legal-content p {
+    font-size: 0.95rem;
+    color: var(--silver-dim);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+  .legal-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  .legal-content ul li {
+    font-size: 0.95rem;
+    color: var(--silver-dim);
+    line-height: 1.8;
+    font-weight: 300;
+    padding-left: 20px;
+    position: relative;
+  }
+  .legal-content ul li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--silver);
+  }
+  .legal-content strong {
+    color: var(--silver-light);
+    font-weight: 500;
+  }
+
   @media (max-width: 900px) {
     .case-grid { grid-template-columns: 1fr; }
     .testi-grid { grid-template-columns: 1fr; }
     .svc-hero, .case-studies, .testimonials, .svc-cta-section { padding-left: 28px; padding-right: 28px; }
+    .legal-body { padding-left: 28px; padding-right: 28px; }
+    .legal-hero { padding-left: 28px; padding-right: 28px; }
   }
 </style>
 
