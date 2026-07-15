@@ -547,6 +547,54 @@
   }
   .service-card:hover .service-arrow { opacity: 1; transform: translate(0,0); }
 
+  .service-pricing {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sp-tier {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 10px;
+    padding: 8px 10px;
+    background: rgba(180,180,180,0.03);
+    border: 1px solid rgba(180,180,180,0.06);
+    border-radius: 4px;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .sp-tier:hover { border-color: rgba(180,180,180,0.15); background: rgba(180,180,180,0.06); }
+  .sp-popular {
+    border-color: rgba(200,200,200,0.15);
+    background: rgba(200,200,200,0.05);
+  }
+  .sp-popular:hover { border-color: rgba(200,200,200,0.25); }
+  .sp-tier-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--silver);
+    min-width: 90px;
+  }
+  .sp-tier-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #aaa, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.03em;
+  }
+  .sp-tier-sub {
+    font-size: 0.72rem;
+    color: var(--silver-dim);
+    font-weight: 300;
+    line-height: 1.3;
+  }
+
   /* MARQUEE STRIP */
   .marquee-strip {
     padding: 28px 0;
@@ -1075,6 +1123,11 @@
         <span class="service-icon">📄</span>
         <h3 class="service-title">ATS Resume<br>Optimization</h3>
         <p class="service-desc">Built specifically for freshers stepping into the job market. We craft ATS-optimized resumes that pass applicant tracking systems and land you interviews at top companies — before a human even reads your name.</p>
+        <div class="service-pricing">
+          <div class="sp-tier"><span class="sp-tier-name">Starter</span><span class="sp-tier-price">₹999</span><span class="sp-tier-sub">1 revision · 2 days</span></div>
+          <div class="sp-tier sp-popular"><span class="sp-tier-name">Professional ⭐</span><span class="sp-tier-price">₹1,999</span><span class="sp-tier-sub">ATS + LinkedIn · 2 revisions · Cover letter</span></div>
+          <div class="sp-tier"><span class="sp-tier-name">Premium</span><span class="sp-tier-price">₹3,499</span><span class="sp-tier-sub">ATS + LinkedIn + Cover Letter · Job strategy call · Unlimited revisions 7 days</span></div>
+        </div>
         <span class="service-arrow">↗</span>
       </div>
 
@@ -1083,7 +1136,12 @@
         <div class="service-number">02</div>
         <span class="service-icon">🤖</span>
         <h3 class="service-title">AI<br>Chatbots</h3>
-        <p class="service-desc">Intelligent, context-aware chatbots trained for your business. Whether it's customer support, lead generation, or internal operations — we build AI that works around the clock so you don't have to.</p>
+        <p class="service-desc">I'll reduce your customer support workload with a custom AI assistant.</p>
+        <div class="service-pricing">
+          <div class="sp-tier"><span class="sp-tier-name">Starter</span><span class="sp-tier-price">₹14,999</span><span class="sp-tier-sub">FAQ chatbot · Website integration · Up to 100 Q&A</span></div>
+          <div class="sp-tier sp-popular"><span class="sp-tier-name">Growth ⭐</span><span class="sp-tier-price">₹34,999</span><span class="sp-tier-sub">Custom chatbot · Lead capture · WhatsApp/API · Analytics</span></div>
+          <div class="sp-tier"><span class="sp-tier-name">Business</span><span class="sp-tier-price">₹69,999+</span><span class="sp-tier-sub">RAG chatbot · Multiple data sources · Custom UI · Deployment</span></div>
+        </div>
         <span class="service-arrow">↗</span>
       </div>
 
@@ -1092,7 +1150,12 @@
         <div class="service-number">03</div>
         <span class="service-icon">🌐</span>
         <h3 class="service-title">Premium<br>Websites</h3>
-        <p class="service-desc">High-performance, visually striking websites engineered to convert. Every pixel is intentional, every interaction is fluid — because your digital presence should be as bold as your ambition.</p>
+        <p class="service-desc">I'll build a website that helps your business get more enquiries.</p>
+        <div class="service-pricing">
+          <div class="sp-tier"><span class="sp-tier-name">Landing Page</span><span class="sp-tier-price">₹14,999</span><span class="sp-tier-sub">Single page · Responsive · Contact form</span></div>
+          <div class="sp-tier sp-popular"><span class="sp-tier-name">Business ⭐</span><span class="sp-tier-price">₹29,999</span><span class="sp-tier-sub">5–8 Pages · Responsive · SEO basics · Contact forms · Analytics</span></div>
+          <div class="sp-tier"><span class="sp-tier-name">Premium Brand</span><span class="sp-tier-price">₹59,999–99,999</span><span class="sp-tier-sub">Custom animations · CMS · Blog · Speed optimization · SEO</span></div>
+        </div>
         <span class="service-arrow">↗</span>
       </div>
 
