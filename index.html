@@ -536,6 +536,16 @@
     font-weight: 300;
   }
 
+  .service-starting {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--silver-light);
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+  }
   .service-arrow {
     position: absolute;
     bottom: 32px; right: 32px;
@@ -1123,11 +1133,7 @@
         <span class="service-icon">📄</span>
         <h3 class="service-title">ATS Resume<br>Optimization</h3>
         <p class="service-desc">Built specifically for freshers stepping into the job market. We craft ATS-optimized resumes that pass applicant tracking systems and land you interviews at top companies — before a human even reads your name.</p>
-        <div class="service-pricing">
-          <div class="sp-tier"><span class="sp-tier-name">Starter</span><span class="sp-tier-price">₹999</span><span class="sp-tier-sub">1 revision · 2 days</span></div>
-          <div class="sp-tier sp-popular"><span class="sp-tier-name">Professional ⭐</span><span class="sp-tier-price">₹1,999</span><span class="sp-tier-sub">ATS + LinkedIn · 2 revisions · Cover letter</span></div>
-          <div class="sp-tier"><span class="sp-tier-name">Premium</span><span class="sp-tier-price">₹3,499</span><span class="sp-tier-sub">ATS + LinkedIn + Cover Letter · Job strategy call · Unlimited revisions 7 days</span></div>
-        </div>
+        <p class="service-starting">Starting at ₹999</p>
         <span class="service-arrow">↗</span>
       </div>
 
@@ -1137,11 +1143,7 @@
         <span class="service-icon">🤖</span>
         <h3 class="service-title">AI<br>Chatbots</h3>
         <p class="service-desc">I'll reduce your customer support workload with a custom AI assistant.</p>
-        <div class="service-pricing">
-          <div class="sp-tier"><span class="sp-tier-name">Starter</span><span class="sp-tier-price">₹14,999</span><span class="sp-tier-sub">FAQ chatbot · Website integration · Up to 100 Q&A</span></div>
-          <div class="sp-tier sp-popular"><span class="sp-tier-name">Growth ⭐</span><span class="sp-tier-price">₹34,999</span><span class="sp-tier-sub">Custom chatbot · Lead capture · WhatsApp/API · Analytics</span></div>
-          <div class="sp-tier"><span class="sp-tier-name">Business</span><span class="sp-tier-price">₹69,999+</span><span class="sp-tier-sub">RAG chatbot · Multiple data sources · Custom UI · Deployment</span></div>
-        </div>
+        <p class="service-starting">Starting at ₹14,999</p>
         <span class="service-arrow">↗</span>
       </div>
 
@@ -1151,11 +1153,7 @@
         <span class="service-icon">🌐</span>
         <h3 class="service-title">Premium<br>Websites</h3>
         <p class="service-desc">I'll build a website that helps your business get more enquiries.</p>
-        <div class="service-pricing">
-          <div class="sp-tier"><span class="sp-tier-name">Landing Page</span><span class="sp-tier-price">₹14,999</span><span class="sp-tier-sub">Single page · Responsive · Contact form</span></div>
-          <div class="sp-tier sp-popular"><span class="sp-tier-name">Business ⭐</span><span class="sp-tier-price">₹29,999</span><span class="sp-tier-sub">5–8 Pages · Responsive · SEO basics · Contact forms · Analytics</span></div>
-          <div class="sp-tier"><span class="sp-tier-name">Premium Brand</span><span class="sp-tier-price">₹59,999–99,999</span><span class="sp-tier-sub">Custom animations · CMS · Blog · Speed optimization · SEO</span></div>
-        </div>
+        <p class="service-starting">Starting at ₹14,999</p>
         <span class="service-arrow">↗</span>
       </div>
 
@@ -1318,6 +1316,41 @@
     <p class="svc-intro">We reverse-engineer what ATS scanners look for and build resumes that score high before a recruiter even blinks. Tailored for freshers ready to break in.</p>
   </section>
 
+  <section class="svc-pricing">
+    <p class="section-label">Pricing</p>
+    <h2 class="section-title"><span class="glass-text" data-text="PLANS">PLANS</span></h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 class="pricing-name">Starter</h3>
+        <p class="pricing-price">₹999</p>
+        <ul class="pricing-features">
+          <li>1 revision</li>
+          <li>Delivery in 2 days</li>
+          <li>ATS-optimized format</li>
+        </ul>
+      </div>
+      <div class="pricing-card pricing-popular">
+        <span class="pricing-badge">Most Popular</span>
+        <h3 class="pricing-name">Professional ⭐</h3>
+        <p class="pricing-price">₹1,999</p>
+        <ul class="pricing-features">
+          <li>ATS Resume + LinkedIn optimization</li>
+          <li>2 revisions</li>
+          <li>Cover letter included</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3 class="pricing-name">Premium</h3>
+        <p class="pricing-price">₹3,499</p>
+        <ul class="pricing-features">
+          <li>ATS Resume + LinkedIn + Cover Letter</li>
+          <li>Job strategy call (30 min)</li>
+          <li>Unlimited revisions for 7 days</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="case-studies">
     <p class="section-label">Real Results</p>
     <h2 class="section-title"><span class="glass-text" data-text="CASE STUDIES">CASE STUDIES</span></h2>
@@ -1406,6 +1439,43 @@
     </div>
   </section>
 
+  <section class="svc-pricing">
+    <p class="section-label">Pricing</p>
+    <h2 class="section-title"><span class="glass-text" data-text="PLANS">PLANS</span></h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 class="pricing-name">Starter</h3>
+        <p class="pricing-price">₹14,999</p>
+        <ul class="pricing-features">
+          <li>FAQ chatbot</li>
+          <li>Website integration</li>
+          <li>Up to 100 Q&A</li>
+        </ul>
+      </div>
+      <div class="pricing-card pricing-popular">
+        <span class="pricing-badge">Most Popular</span>
+        <h3 class="pricing-name">Growth ⭐</h3>
+        <p class="pricing-price">₹34,999</p>
+        <ul class="pricing-features">
+          <li>Custom chatbot</li>
+          <li>Lead capture</li>
+          <li>WhatsApp / API integration</li>
+          <li>Analytics dashboard</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3 class="pricing-name">Business</h3>
+        <p class="pricing-price">₹69,999+</p>
+        <ul class="pricing-features">
+          <li>RAG chatbot</li>
+          <li>Multiple data sources</li>
+          <li>Custom UI</li>
+          <li>Full deployment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="case-studies">
     <p class="section-label">Real Results</p>
     <h2 class="section-title"><span class="glass-text" data-text="CASE STUDIES">CASE STUDIES</span></h2>
@@ -1479,6 +1549,43 @@
       <span class="glass-text" data-text="WEBSITES">WEBSITES</span>
     </h1>
     <p class="svc-intro">High-performance digital experiences built to convert, built to impress, built to last. We don't do templates — every website is a custom-crafted product engineered around your goals.</p>
+  </section>
+
+  <section class="svc-pricing">
+    <p class="section-label">Pricing</p>
+    <h2 class="section-title"><span class="glass-text" data-text="PLANS">PLANS</span></h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 class="pricing-name">Landing Page</h3>
+        <p class="pricing-price">₹14,999</p>
+        <ul class="pricing-features">
+          <li>Single page</li>
+          <li>Responsive design</li>
+          <li>Contact form</li>
+        </ul>
+      </div>
+      <div class="pricing-card pricing-popular">
+        <span class="pricing-badge">Most Popular</span>
+        <h3 class="pricing-name">Business ⭐</h3>
+        <p class="pricing-price">₹29,999</p>
+        <ul class="pricing-features">
+          <li>5–8 pages</li>
+          <li>Responsive design</li>
+          <li>SEO basics</li>
+          <li>Contact forms + Analytics</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3 class="pricing-name">Premium Brand</h3>
+        <p class="pricing-price">₹59,999–99,999</p>
+        <ul class="pricing-features">
+          <li>Custom animations</li>
+          <li>CMS integration</li>
+          <li>Blog setup</li>
+          <li>Speed optimization + SEO</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="case-studies">
@@ -1755,6 +1862,86 @@
     margin-top: 32px;
   }
 
+  /* PRICING GRID */
+  .svc-pricing {
+    padding: 80px 60px 100px;
+    border-top: 1px solid var(--glass-border);
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .pricing-card {
+    padding: 48px 40px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: border-color 0.3s;
+  }
+  .pricing-card:hover { border-color: rgba(180,180,180,0.25); }
+  .pricing-popular {
+    border-color: rgba(200,200,200,0.2);
+    background: rgba(200,200,200,0.04);
+  }
+  .pricing-popular:hover { border-color: rgba(200,200,200,0.35); }
+  .pricing-badge {
+    position: absolute;
+    top: -1px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--silver);
+    background: var(--deep);
+    padding: 6px 16px;
+    border: 1px solid var(--glass-border);
+    border-top: none;
+  }
+  .pricing-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--silver-light);
+  }
+  .pricing-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #aaa, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pricing-features li {
+    font-size: 0.85rem;
+    color: var(--silver-dim);
+    font-weight: 300;
+    padding-left: 18px;
+    position: relative;
+  }
+  .pricing-features li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--silver);
+    font-size: 0.7rem;
+  }
+
   /* CASE STUDIES */
   .case-studies {
     padding: 80px 60px 100px;
@@ -1975,8 +2162,9 @@
 
   @media (max-width: 900px) {
     .case-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
     .testi-grid { grid-template-columns: 1fr; }
-    .svc-hero, .case-studies, .testimonials, .svc-cta-section, .home-cta { padding-left: 28px; padding-right: 28px; }
+    .svc-hero, .case-studies, .testimonials, .svc-cta-section, .home-cta, .svc-pricing { padding-left: 28px; padding-right: 28px; }
     .legal-body { padding-left: 28px; padding-right: 28px; }
     .legal-hero { padding-left: 28px; padding-right: 28px; }
   }
