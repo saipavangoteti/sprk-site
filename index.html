@@ -56,7 +56,7 @@ a{color:inherit}
 .hero-nav .menu{display:none}
 @media(max-width:768px){.hero-nav .links{display:none}.hero-nav .menu{display:block}}
 .hero-statement{margin-top:auto;margin-bottom:72px;max-width:100%}
-.hero-statement h1{font-family:var(--font-display);font-weight:400;font-size:clamp(56px,6.6vw,104px);letter-spacing:-.04em;line-height:.95;margin:0;overflow:hidden}
+.hero-statement h1{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,5vw,72px);letter-spacing:-.02em;line-height:.95;margin:0;overflow:hidden}
 .hero-statement h1 .line{display:block;transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) forwards}
 .hero-statement h1 .line:nth-child(2){animation-delay:110ms}
 .hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
@@ -68,12 +68,12 @@ a{color:inherit}
 /* ===== FEATURES ===== */
 .features{padding:var(--section) 0}
 .features-list{margin-top:0}
-.features-head{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,5.2vw,84px);letter-spacing:-.02em;line-height:1;color:var(--muted);margin-bottom:.35em}
+.features-head{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.5vw,56px);letter-spacing:-.02em;line-height:1;color:var(--muted);margin-bottom:.35em}
 .feature-row{display:grid;grid-template-columns:8fr 4fr;gap:var(--gutter);align-items:baseline;padding:.35em 0;transition:opacity var(--t-ui) var(--ease-out)}
 .feature-row:hover{opacity:1}
 .feature-row:not(:hover){opacity:1}
-.feature-name{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,5.2vw,84px);letter-spacing:-.02em;line-height:1}
-.feature-desc{font-size:17px;line-height:1.5;color:var(--muted);max-width:40ch}
+.feature-name{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.5vw,56px);letter-spacing:-.02em;line-height:1}
+.feature-desc{font-size:16px;line-height:1.5;color:var(--muted);max-width:40ch}
 @media(max-width:768px){.feature-row{grid-template-columns:1fr;gap:8px}.feature-desc{padding-left:0;margin-bottom:28px}}
 
 /* ===== PROOF (RECOGNITION TABLE) ===== */
@@ -119,7 +119,7 @@ a{color:inherit}
 
 /* ===== CONTACT ===== */
 .contact{padding:var(--section) 0}
-.contact-row{font-family:var(--font-display);font-weight:400;font-size:clamp(44px,6vw,88px);letter-spacing:-.02em;line-height:1.0;padding:24px 0;border-bottom:1px solid rgba(239,239,239,.1)}
+.contact-row{font-family:var(--font-display);font-weight:400;font-size:clamp(32px,4.5vw,64px);letter-spacing:-.02em;line-height:1.0;padding:20px 0;border-bottom:1px solid rgba(239,239,239,.1)}
 .contact-row a{color:inherit;text-decoration:none;transition:color var(--t-hover) var(--ease-out)}
 .contact-row a:hover{color:var(--accent)}
 .contact-greeting{display:flex;align-items:center;gap:24px;margin-top:40px}
@@ -173,13 +173,6 @@ img{max-width:100%;height:auto}
 <section class="hero" id="hero">
   <div class="hero-top">
     <span style="font-family:var(--font-display);font-size:16px">SPRK</span>
-    <div class="hero-nav">
-      <a href="#services">Services</a>
-      <a href="#proof">Proof</a>
-      <a href="#portfolio">Work</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </div>
   </div>
   <div class="hero-statement">
     <h1><span class="line" style="transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) forwards">We build what</span><br><span class="line" style="transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) 110ms forwards">others can't.</span></h1>
@@ -216,6 +209,10 @@ img{max-width:100%;height:auto}
 </section>
 
 <!-- PROOF -->
+<section style="padding:0;overflow:hidden">
+  <img src="https://picsum.photos/id/407/1600/900" alt="Hands at work" loading="lazy" style="width:100%;height:40vh;object-fit:cover;display:block;filter:grayscale(0.3) contrast(1.1)">
+</section>
+
 <section class="proof" id="proof">
   <div class="wrap">
     <p class="proof-heading">Recognition</p>
