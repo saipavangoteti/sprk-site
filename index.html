@@ -217,14 +217,31 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
           </div>
         </div>
         <div class="hero-visual" style="display:flex;align-items:center;justify-content:center">
-          <svg id="heroEye" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;height:auto;filter:drop-shadow(0 0 20px rgba(147,241,247,0.3))">
-            <ellipse cx="100" cy="60" rx="90" ry="50" stroke="#93f1f7" stroke-width="1.5" fill="none" opacity="0.25"/>
-            <ellipse cx="100" cy="60" rx="70" ry="40" stroke="#93f1f7" stroke-width="1" fill="none" opacity="0.15"/>
-            <circle cx="100" cy="60" r="38" fill="#18191b" stroke="#93f1f7" stroke-width="2"/>
-            <circle id="pupil" cx="100" cy="60" r="20" fill="#93f1f7"/>
-            <circle id="pupilHighlight" cx="108" cy="52" r="7" fill="#ff6b3d" opacity="0.7"/>
-            <circle cx="100" cy="60" r="38" fill="none" stroke="#93f1f7" stroke-width="1" opacity="0.1"/>
-            <circle cx="100" cy="60" r="6" fill="#18191b"/>
+          <svg id="heroBot" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;height:auto;filter:drop-shadow(0 0 24px rgba(147,241,247,0.2))">
+            <!-- Antenna -->
+            <line x1="100" y1="20" x2="100" y2="45" stroke="#93f1f7" stroke-width="2"/>
+            <circle cx="100" cy="14" r="6" fill="#93f1f7" opacity="0.9"/>
+            <circle cx="100" cy="14" r="12" fill="none" stroke="#93f1f7" stroke-width="1" opacity="0.3"/>
+            <!-- Head -->
+            <rect x="50" y="45" width="100" height="80" rx="20" fill="#111111" stroke="#93f1f7" stroke-width="2"/>
+            <!-- Eyes -->
+            <circle cx="75" cy="75" r="14" fill="#000000" stroke="#93f1f7" stroke-width="1.5"/>
+            <circle cx="125" cy="75" r="14" fill="#000000" stroke="#93f1f7" stroke-width="1.5"/>
+            <circle id="botPupilL" cx="75" cy="75" r="7" fill="#93f1f7"/>
+            <circle id="botPupilR" cx="125" cy="75" r="7" fill="#93f1f7"/>
+            <circle id="botHighlightL" cx="78" cy="72" r="2.5" fill="#b3f5fa" opacity="0.8"/>
+            <circle id="botHighlightR" cx="128" cy="72" r="2.5" fill="#b3f5fa" opacity="0.8"/>
+            <!-- Mouth -->
+            <rect x="70" y="100" width="60" height="12" rx="6" fill="#000000" stroke="#93f1f7" stroke-width="1.5"/>
+            <rect id="mouthBar" x="75" y="103" width="12" height="6" rx="3" fill="#93f1f7" opacity="0.7"/>
+            <!-- Side panels -->
+            <rect x="40" y="60" width="8" height="35" rx="4" fill="#111111" stroke="#93f1f7" stroke-width="1.5"/>
+            <rect x="152" y="60" width="8" height="35" rx="4" fill="#111111" stroke="#93f1f7" stroke-width="1.5"/>
+            <!-- Body -->
+            <rect x="60" y="130" width="80" height="45" rx="12" fill="#111111" stroke="#93f1f7" stroke-width="1.5" opacity="0.7"/>
+            <circle cx="85" cy="152" r="4" fill="#93f1f7" opacity="0.5"/>
+            <circle cx="115" cy="152" r="4" fill="#93f1f7" opacity="0.5"/>
+            <rect x="90" y="138" width="20" height="8" rx="4" fill="#93f1f7" opacity="0.3"/>
           </svg>
         </div>
       </div>
@@ -262,16 +279,7 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="stats">
-        <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Projects Delivered</div></div>
-        <div class="stat"><div class="stat-num">3×</div><div class="stat-label">Conversion Lift</div></div>
-        <div class="stat"><div class="stat-num">24hr</div><div class="stat-label">Response Time</div></div>
-        <div class="stat"><div class="stat-num">7 days</div><div class="stat-label">Fastest Launch</div></div>
-      </div>
-    </div>
-  </section>
+
 
   <section class="section" style="padding-top:0">
     <div class="wrap">
@@ -601,28 +609,39 @@ function closeMenu(){document.getElementById('navLinks').classList.remove('open'
 function handleSubmit(e){e.preventDefault();const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);e.target.reset()}
 
 // Eye tracking
-const eye=document.getElementById('heroEye');
-const pupil=document.getElementById('pupil');
-const highlight=document.getElementById('pupilHighlight');
-if(eye&&pupil){
-  const updateEye=(cx,cy)=>{
-    const r=eye.getBoundingClientRect();
+const bot=document.getElementById('heroBot');
+const pupilL=document.getElementById('botPupilL');
+const pupilR=document.getElementById('botPupilR');
+const hlL=document.getElementById('botHighlightL');
+const hlR=document.getElementById('botHighlightR');
+const mouthBar=document.getElementById('mouthBar');
+if(bot&&pupilL){
+  const updateBot=(cx,cy)=>{
+    const r=bot.getBoundingClientRect();
     const ex=r.left+r.width/2;
-    const ey=r.top+r.height/2;
+    const ey=r.top+r.height*0.35;
     const dx=cx-ex;
     const dy=cy-ey;
     const dist=Math.sqrt(dx*dx+dy*dy);
-    const maxMove=22;
+    const maxMove=8;
     const moveX=(dx/dist||0)*Math.min(dist,maxMove);
     const moveY=(dy/dist||0)*Math.min(dist,maxMove);
-    pupil.setAttribute('cx',100+moveX);
-    pupil.setAttribute('cy',60+moveY);
-    highlight.setAttribute('cx',108+moveX);
-    highlight.setAttribute('cy',52+moveY);
+    pupilL.setAttribute('cx',75+moveX);
+    pupilL.setAttribute('cy',75+moveY);
+    pupilR.setAttribute('cx',125+moveX);
+    pupilR.setAttribute('cy',75+moveY);
+    hlL.setAttribute('cx',78+moveX);
+    hlL.setAttribute('cy',72+moveY);
+    hlR.setAttribute('cx',128+moveX);
+    hlR.setAttribute('cy',72+moveY);
+    // Animate antenna based on distance
+    const ant=document.querySelector('#heroBot line');
+    if(ant){ant.setAttribute('y2',20+Math.min(dist/10,15));}
   };
-  document.addEventListener('mousemove',e=>updateEye(e.clientX,e.clientY));
-  document.addEventListener('touchmove',e=>{if(e.touches.length>0)updateEye(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
-  document.addEventListener('touchstart',e=>{if(e.touches.length>0)updateEye(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
+  document.addEventListener('mousemove',e=>updateBot(e.clientX,e.clientY));
+  document.addEventListener('touchmove',e=>{if(e.touches.length>0)updateBot(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
+  document.addEventListener('touchstart',e=>{if(e.touches.length>0)updateBot(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
+}
 }
 const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('fade-up');obs.unobserve(en.target)}})},{threshold:.1});
 document.querySelectorAll('.service-card,.stat,.portfolio-image,.testi-card').forEach(el=>obs.observe(el));
