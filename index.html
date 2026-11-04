@@ -82,10 +82,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 .card ul{list-style:none;padding:0}
 .card ul li{padding:4px 0;font-size:.85rem;color:var(--silver-dim)}
 .card ul li::before{content:'→ ';color:var(--cyan)}
-.marquee{overflow:hidden;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);padding:14px 0;margin:40px 0}
-.marquee-track{display:flex;gap:40px;animation:scroll 30s linear infinite;white-space:nowrap}
-.marquee-track span{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-dim)}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .proof{background:linear-gradient(135deg,rgba(56,189,248,.06),rgba(167,139,250,.04));border:1px solid var(--glass-border);border-radius:16px;padding:32px;position:relative;overflow:hidden}
 .proof::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
 .proof h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;margin-bottom:8px;color:var(--white)}
@@ -140,8 +136,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card);border:1px solid var(--cyan);color:var(--white);padding:12px 24px;border-radius:8px;z-index:9999;transition:transform .3s;font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .page{display:none}.page.active{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{animation:fadeUp .8s ease both}
+/* ACCESSIBILITY & MOTION */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:768px){.hero h1{font-size:2.8rem}.section{padding:50px 0}.floating-cta{bottom:16px;right:16px;padding:10px 16px;font-size:.7rem}}
 .legal-body{max-width:800px;margin:0 auto;color:var(--silver-dim);font-size:.9rem;line-height:1.8}
 .legal-body h3{color:var(--white);margin:24px 0 8px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;font-size:.9rem}
@@ -198,18 +196,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
     </div>
   </section>
 
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>ATS Resume Optimization</span><span>·</span>
-      <span>AI Chatbots</span><span>·</span>
-      <span>Premium Websites</span><span>·</span>
-      <span>SPRK Scanner</span><span>·</span>
-      <span>ATS Resume Optimization</span><span>·</span>
-      <span>AI Chatbots</span><span>·</span>
-      <span>Premium Websites</span><span>·</span>
-      <span>SPRK Scanner</span><span>·</span>
-    </div>
-  </div>
 
   <section class="section">
     <div class="wrap">
