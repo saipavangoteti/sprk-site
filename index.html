@@ -4,1497 +4,319 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPRK — Ignite Your Potential</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="description" content="SPRK helps freshers land jobs with ATS-optimized resumes, builds custom AI chatbots, and crafts premium websites. India-based, remote worldwide.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sprkai.studio/">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--surface:#151515;--ink:#efefef;--muted:#8c8c8c;
+  --accent:#b11226;--accent-ink:#ffffff;
+  --font-display:'Gambarino',serif;--font-text:'General Sans',sans-serif;
+  --step-small:clamp(0.8125rem,0.79rem+0.1vw,0.875rem);
+  --step-body:clamp(1.0625rem,1rem+0.25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem+0.7vw,1.625rem);
+  --step-head:clamp(2rem,1.3rem+3.2vw,4rem);
+  --step-display:clamp(3rem,1rem+9vw,9rem);
+  --margin:clamp(2rem,4vw,4rem);
+  --gutter:clamp(1rem,2vw,2rem);
+  --section:clamp(6rem,14vw,16rem);
+  --radius:0px;
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+  --ease-expo:cubic-bezier(0.16,1,0.3,1);
+  --ease-in-out:cubic-bezier(0.76,0,0.24,1);
+  --t-press:140ms;--t-hover:180ms;--t-ui:240ms;--t-reveal:900ms;
+  --glass:rgba(255,255,255,.02);--glass-border:rgba(255,255,255,.08);
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-text);font-size:var(--step-body);line-height:1.5;font-kerning:normal;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:var(--accent-ink);padding:8px 16px;z-index:10000;font-weight:500;transition:top .2s}
+.skip-link:focus{top:0}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;text-wrap:balance;hyphens:none;margin:0;letter-spacing:-.02em}
+img,video,svg,canvas{display:block;max-width:100%}
+img,video{height:auto;background:var(--surface)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+a{color:inherit}
+::selection{background:var(--accent);color:var(--accent-ink)}
 
-  :root {
-    --black: #080808;
-    --deep: #0d0d0d;
-    --silver: #b0b0b0;
-    --silver-light: #d4d4d4;
-    --silver-dim: #6a6a6a;
-    --white: #f0f0f0;
-    --glass-bg: rgba(180,180,180,0.04);
-    --glass-border: rgba(180,180,180,0.12);
-    --glass-shine: rgba(220,220,220,0.08);
-    --accent: #c8c8c8;
-  }
+/* ===== HERO ===== */
+.hero{min-height:100vh;padding:44px var(--margin) 72px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.hero-top{display:flex;justify-content:space-between;align-items:baseline}
+.hero-wordmark{font-family:var(--font-display);font-size:16px;font-weight:400;letter-spacing:-.02em}
+.hero-nav{display:flex;gap:32px;font-size:14px;font-weight:400}
+.hero-nav a{color:var(--ink);text-decoration:none;cursor:pointer;transition:color var(--t-hover) var(--ease-out)}
+.hero-nav a:hover{color:var(--accent)}
+.hero-nav .menu{display:none}
+@media(max-width:768px){.hero-nav .links{display:none}.hero-nav .menu{display:block}}
+.hero-statement{margin-top:auto;margin-bottom:72px;max-width:100%}
+.hero-statement h1{font-family:var(--font-display);font-weight:400;font-size:clamp(56px,6.6vw,104px);letter-spacing:-.04em;line-height:.95;margin:0;overflow:hidden}
+.hero-statement h1 .line{display:block;transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) forwards}
+.hero-statement h1 .line:nth-child(2){animation-delay:110ms}
+.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.hero-sentence{font-size:18px;max-width:32ch;line-height:1.4;color:var(--muted);font-weight:400}
+.hero-action{font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color var(--t-hover) var(--ease-out),border-color var(--t-hover) var(--ease-out)}
+.hero-action:hover{color:var(--accent);border-color:var(--accent)}
+@keyframes maskReveal{to{transform:translateY(0)}}
 
-  html { scroll-behavior: smooth; }
+/* ===== FEATURES ===== */
+.features{padding:var(--section) 0}
+.features-list{margin-top:0}
+.features-head{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,5.2vw,84px);letter-spacing:-.02em;line-height:1;color:var(--muted);margin-bottom:.35em}
+.feature-row{display:grid;grid-template-columns:8fr 4fr;gap:var(--gutter);align-items:baseline;padding:.35em 0;transition:opacity var(--t-ui) var(--ease-out)}
+.feature-row:hover{opacity:1}
+.feature-row:not(:hover){opacity:1}
+.feature-name{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,5.2vw,84px);letter-spacing:-.02em;line-height:1}
+.feature-desc{font-size:17px;line-height:1.5;color:var(--muted);max-width:40ch}
+@media(max-width:768px){.feature-row{grid-template-columns:1fr;gap:8px}.feature-desc{padding-left:0;margin-bottom:28px}}
 
-  body {
-    background: var(--black);
-    color: var(--silver-light);
-    font-family: 'Barlow', sans-serif;
-    overflow-x: hidden;
-    cursor: none;
-  }
+/* ===== PROOF (RECOGNITION TABLE) ===== */
+.proof{padding:var(--section) 0;background:var(--surface)}
+.proof-heading{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.02em;line-height:1.1;margin-bottom:72px;color:var(--muted)}
+.proof-table{width:100%;border-collapse:collapse}
+.proof-table tr{padding:14px 0}
+.proof-table td{padding:14px 0;font-size:17px;vertical-align:baseline}
+.proof-table .year{width:16.6%;font-family:var(--font-display);font-size:22px;color:var(--muted)}
+.proof-table .title{width:33.3%;color:var(--ink)}
+.proof-table .body{width:33.3%;color:var(--muted)}
+.proof-table .award{width:16.6%;text-align:right;color:var(--accent);font-weight:500}
+.proof-table tr:nth-child(even){background:rgba(255,255,255,.02)}
+.proof-table tr.group-start .year{color:var(--ink)}
+@media(max-width:768px){.proof-table tr{display:block;padding:0 0 24px}.proof-table td{display:block;width:100%!important;padding:0}.proof-table .year{font-size:22px;margin-bottom:4px}.proof-table .title{margin-bottom:2px}}
 
-  /* CUSTOM CURSOR */
-  .cursor {
-    position: fixed;
-    width: 8px; height: 8px;
-    background: var(--silver-light);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s;
-  }
-  .cursor-ring {
-    position: fixed;
-    width: 36px; height: 36px;
-    border: 1px solid rgba(180,180,180,0.4);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: transform 0.12s ease, width 0.3s, height 0.3s, border-color 0.3s;
-  }
+/* ===== PORTFOLIO ===== */
+.portfolio{padding:var(--section) 0}
+.portfolio-heading{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.02em;line-height:1.1;color:var(--muted);margin-bottom:48px}
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.portfolio-image{overflow:hidden}
+.portfolio-image img{width:100%;height:auto;display:block;transition:transform var(--t-reveal) var(--ease-soft)}
+.portfolio-image:hover img{transform:scale(1.02)}
+.portfolio-info h3{font-family:var(--font-display);font-weight:400;font-size:clamp(24px,3vw,40px);letter-spacing:-.02em;margin-bottom:16px}
+.portfolio-info p{font-size:18px;line-height:1.5;color:var(--muted);max-width:44ch;margin-bottom:24px}
+.portfolio-metrics{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+.portfolio-metric{display:flex;flex-direction:column}
+.portfolio-metric .num{font-family:var(--font-display);font-size:2.2rem;font-weight:400;letter-spacing:-.02em}
+.portfolio-metric .lbl{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.portfolio-link{font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color var(--t-hover) var(--ease-out),border-color var(--t-hover) var(--ease-out)}
+.portfolio-link:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;gap:32px}}
 
-  /* NOISE OVERLAY */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.5;
-  }
+/* ===== FAQ ===== */
+.faq{padding:var(--section) 0;background:var(--surface)}
+.faq-layout{display:grid;grid-template-columns:1fr 2fr;gap:48px}
+.faq-heading{font-family:var(--font-display);font-weight:400;font-size:clamp(24px,2.6vw,40px);letter-spacing:-.02em;line-height:1.1;color:var(--muted)}
+.faq-list{display:flex;flex-direction:column;gap:64px}
+.faq-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);align-items:baseline}
+.faq-q{font-family:var(--font-display);font-weight:400;font-size:clamp(24px,2.6vw,40px);letter-spacing:-.02em;line-height:1.1}
+.faq-a{font-size:17px;line-height:1.55;color:var(--muted);max-width:40ch}
+@media(max-width:768px){.faq-layout{grid-template-columns:1fr;gap:32px}.faq-row{grid-template-columns:1fr;gap:8px}.faq-a{margin-bottom:40px}}
 
-  /* PAGES */
-  .page { display: none; min-height: 100vh; position: relative; z-index: 2; }
-  .page.active { display: block; }
+/* ===== CONTACT ===== */
+.contact{padding:var(--section) 0}
+.contact-row{font-family:var(--font-display);font-weight:400;font-size:clamp(44px,6vw,88px);letter-spacing:-.02em;line-height:1.0;padding:24px 0;border-bottom:1px solid rgba(239,239,239,.1)}
+.contact-row a{color:inherit;text-decoration:none;transition:color var(--t-hover) var(--ease-out)}
+.contact-row a:hover{color:var(--accent)}
+.contact-greeting{display:flex;align-items:center;gap:24px;margin-top:40px}
+.contact-greeting span{font-family:var(--font-display);font-weight:400;font-size:clamp(44px,6vw,88px);letter-spacing:-.02em}
+.contact-btn{width:.9em;height:.9em;background:var(--accent);color:var(--accent-ink);border:none;border-radius:50%;font-size:inherit;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:transform var(--t-hover) var(--ease-out)}
+.contact-btn:hover{transform:scale(1.05)}
+.contact-btn:active{transform:scale(.97)}
+@media(max-width:768px){.contact-row{font-size:9.6vw;padding:16px 0}.contact-greeting{flex-wrap:wrap}}
 
-  /* ========== NAV ========== */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 24px 60px;
-    display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1px solid rgba(180,180,180,0.06);
-    backdrop-filter: blur(20px);
-    background: rgba(8,8,8,0.7);
-  }
+/* ===== FOOTER ===== */
+footer{padding:40px var(--margin);border-top:1px solid rgba(239,239,239,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;transition:color var(--t-hover) var(--ease-out)}
+footer a:hover{color:var(--accent)}
 
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.15em;
-    background: linear-gradient(135deg, #888 0%, #ddd 40%, #aaa 60%, #fff 80%, #999 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: none;
-    position: relative;
-  }
+/* ===== MOTION ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp var(--t-reveal) var(--ease-expo) both}
+@media(prefers-reduced-motion:reduce){.fade-up{animation:none}}
 
-  .nav-logo::after {
-    content: '';
-    position: absolute;
-    right: -18px; top: 50%;
-    transform: translateY(-50%);
-    width: 24px; height: 2px;
-    background: linear-gradient(90deg, var(--silver-light), transparent);
-    box-shadow: 0 -5px 0 rgba(200,200,200,0.3), 0 5px 0 rgba(200,200,200,0.15);
-  }
+/* ===== NAV ===== */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:baseline;padding:24px var(--margin);background:transparent}
+.site-nav a{color:var(--ink);text-decoration:none;font-family:var(--font-text);font-weight:500;font-size:14px;letter-spacing:0;transition:color var(--t-hover) var(--ease-out)}
+.site-nav a:hover{color:var(--accent)}
+.site-nav .links{display:flex;gap:32px}
+@media(max-width:768px){.site-nav .links{display:none}.site-nav .menu{display:block}}
 
-  .nav-links { display: flex; gap: 40px; list-style: none; }
-  .nav-links a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    text-decoration: none;
-    transition: color 0.3s;
-    cursor: none;
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--silver-light); }
-  .nav-links a.active {
-    border-bottom: 1px solid var(--silver-dim);
-    padding-bottom: 2px;
-  }
-
-  /* ========== HOME PAGE ========== */
-  /* HERO */
-  .hero {
-    height: 100vh;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Diagonal speed lines background */
-  .hero-lines {
-    position: absolute; inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .hero-lines::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -200px;
-    width: 900px; height: 600px;
-    background: repeating-linear-gradient(
-      -15deg,
-      transparent,
-      transparent 30px,
-      rgba(150,150,150,0.025) 30px,
-      rgba(150,150,150,0.025) 31px
-    );
-    transform: skewX(-10deg);
-  }
-  .hero-lines::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: -100px;
-    width: 600px; height: 400px;
-    background: radial-gradient(ellipse at center, rgba(140,140,140,0.04) 0%, transparent 70%);
-  }
-
-  /* Floating speed-streak accents */
-  .streak {
-    position: absolute;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(200,200,200,0.3), transparent);
-    pointer-events: none;
-    animation: streakMove 4s ease-in-out infinite;
-  }
-  .streak:nth-child(1) { width: 200px; top: 30%; left: 20%; animation-delay: 0s; }
-  .streak:nth-child(2) { width: 120px; top: 60%; right: 25%; animation-delay: 1.5s; }
-  .streak:nth-child(3) { width: 80px; top: 20%; right: 15%; animation-delay: 0.8s; }
-
-  @keyframes streakMove {
-    0%, 100% { opacity: 0; transform: translateX(-20px); }
-    50% { opacity: 1; transform: translateX(20px); }
-  }
-
-  .hero-tag {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    margin-bottom: 24px;
-    animation: fadeUp 1s ease both;
-  }
-
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(6rem, 16vw, 16rem);
-    line-height: 0.85;
-    text-align: center;
-    letter-spacing: 0.05em;
-    position: relative;
-    animation: fadeUp 1s ease 0.15s both;
-  }
-
-  /* GLASS TEXT EFFECT */
-  .glass-text {
-    display: inline-block;
-    position: relative;
-    background: linear-gradient(
-      160deg,
-      #555 0%,
-      #aaa 20%,
-      #e8e8e8 35%,
-      #f5f5f5 42%,
-      #fff 50%,
-      #ddd 58%,
-      #aaa 70%,
-      #777 80%,
-      #bbb 90%,
-      #999 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 0 40px rgba(200,200,200,0.08));
-  }
-
-  /* Light beam passing through */
-  .glass-text::after {
-    content: attr(data-text);
-    position: absolute; inset: 0;
-    background: linear-gradient(
-      105deg,
-      transparent 20%,
-      rgba(255,255,255,0.0) 35%,
-      rgba(255,255,255,0.25) 45%,
-      rgba(255,255,255,0.0) 55%,
-      transparent 70%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: glassShine 5s ease-in-out infinite;
-    background-size: 200% 100%;
-  }
-
-  @keyframes glassShine {
-    0% { background-position: -100% 0; }
-    50% { background-position: 200% 0; }
-    100% { background-position: -100% 0; }
-  }
-
-  .hero-sub {
-    margin-top: 32px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    animation: fadeUp 1s ease 0.3s both;
-  }
-
-  .hero-cta {
-    margin-top: 48px;
-    animation: fadeUp 1s ease 0.45s both;
-  }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 14px 40px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--silver-light);
-    text-decoration: none;
-    border: 1px solid rgba(180,180,180,0.2);
-    background: rgba(180,180,180,0.04);
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s, color 0.3s;
-    cursor: none;
-  }
-  .btn::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(200,200,200,0.06), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.5s;
-  }
-  .btn:hover::before { transform: translateX(100%); }
-  .btn:hover { border-color: rgba(180,180,180,0.5); color: #fff; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* SERVICES SECTION */
-  .services {
-    padding: 140px 60px;
-    position: relative;
-  }
-
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 6vw, 6rem);
-    line-height: 0.9;
-    margin-bottom: 80px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-
-  .service-card {
-    position: relative;
-    padding: 56px 48px 64px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    overflow: hidden;
-    transition: border-color 0.4s;
-    cursor: none;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(200,200,200,0.05) 0%, transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-
-  .service-card:hover { border-color: rgba(180,180,180,0.25); }
-  .service-card:hover::before { opacity: 1; }
-
-  /* Glass shine sweep on hover */
-  .service-card::after {
-    content: '';
-    position: absolute;
-    top: -100%; left: -100%;
-    width: 60%; height: 200%;
-    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.04), transparent);
-    transform: rotate(30deg);
-    transition: transform 0.6s;
-  }
-  .service-card:hover::after {
-    transform: rotate(30deg) translate(300%, 0);
-  }
-
-  .service-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5rem;
-    line-height: 1;
-    background: linear-gradient(135deg, #2a2a2a, #555);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 32px;
-    transition: background 0.4s;
-  }
-  .service-card:hover .service-number {
-    background: linear-gradient(135deg, #555, #aaa);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-
-  .service-icon {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    display: block;
-    filter: grayscale(1) brightness(0.6);
-    transition: filter 0.4s;
-  }
-  .service-card:hover .service-icon { filter: grayscale(0.3) brightness(0.9); }
-
-  .service-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--silver-light);
-    margin-bottom: 16px;
-    line-height: 1.1;
-  }
-
-  .service-desc {
-    font-family: 'Barlow', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: var(--silver-dim);
-    font-weight: 300;
-  }
-
-  .service-arrow {
-    position: absolute;
-    bottom: 32px; right: 32px;
-    font-size: 1.2rem;
-    color: var(--silver-dim);
-    opacity: 0;
-    transform: translate(-8px, 8px);
-    transition: opacity 0.3s, transform 0.3s;
-  }
-  .service-card:hover .service-arrow { opacity: 1; transform: translate(0,0); }
-
-  /* MARQUEE STRIP */
-  .marquee-strip {
-    padding: 28px 0;
-    border-top: 1px solid var(--glass-border);
-    border-bottom: 1px solid var(--glass-border);
-    overflow: hidden;
-    position: relative;
-    background: rgba(180,180,180,0.02);
-  }
-  .marquee-track {
-    display: flex; gap: 0;
-    white-space: nowrap;
-    animation: marquee 18s linear infinite;
-  }
-  .marquee-item {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.3em;
-    color: var(--silver-dim);
-    padding: 0 48px;
-    flex-shrink: 0;
-  }
-  .marquee-dot {
-    color: var(--silver-dim);
-    font-size: 0.4rem;
-    vertical-align: middle;
-  }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* STATEMENT SECTION */
-  .statement {
-    padding: 160px 60px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 60px;
-    border-top: 1px solid var(--glass-border);
-  }
-  .statement-text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    line-height: 1;
-    max-width: 680px;
-  }
-  .statement-sub {
-    font-size: 0.85rem;
-    font-family: 'Barlow', sans-serif;
-    color: var(--silver-dim);
-    line-height: 1.7;
-    max-width: 280px;
-    font-weight: 300;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 40px 60px;
-    border-top: 1px solid var(--glass-border);
-    display: flex;
-    align-items: center; justify-content: space-between;
-  }
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.2em;
-    background: linear-gradient(90deg, #666, #bbb, #888);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .footer-copy {
-    font-size: 0.75rem;
-    color: var(--silver-dim);
-    letter-spacing: 0.1em;
-    font-family: 'Barlow Condensed', sans-serif;
-  }
-
-  /* ========== ABOUT / CONTACT PAGE ========== */
-  .about-hero {
-    padding: 180px 60px 100px;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 600px; height: 100%;
-    background: repeating-linear-gradient(
-      -12deg,
-      transparent,
-      transparent 28px,
-      rgba(150,150,150,0.02) 28px,
-      rgba(150,150,150,0.02) 29px
-    );
-    pointer-events: none;
-  }
-
-  .about-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    margin-bottom: 20px;
-  }
-  .about-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 10vw, 10rem);
-    line-height: 0.85;
-    margin-bottom: 48px;
-  }
-  .about-intro {
-    font-size: 1rem;
-    color: var(--silver-dim);
-    line-height: 1.8;
-    max-width: 560px;
-    font-weight: 300;
-  }
-
-  /* CONTACT FORM */
-  .contact-section {
-    padding: 100px 60px 140px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: start;
-  }
-
-  .contact-info h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 20px;
-  }
-  .contact-info p {
-    font-size: 0.9rem;
-    color: var(--silver-dim);
-    line-height: 1.8;
-    font-weight: 300;
-    margin-bottom: 48px;
-  }
-
-  .contact-detail {
-    display: flex; flex-direction: column;
-    gap: 24px;
-  }
-  .contact-item {
-    display: flex; flex-direction: column; gap: 4px;
-  }
-  .contact-item-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-  }
-  .contact-item-value {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.08em;
-    color: var(--silver-light);
-  }
-
-  /* FORM */
-  .contact-form {
-    display: flex; flex-direction: column; gap: 0;
-  }
-
-  .form-group {
-    position: relative;
-    border-bottom: 1px solid var(--glass-border);
-    padding: 28px 0 8px;
-    transition: border-color 0.3s;
-  }
-  .form-group:first-child { border-top: 1px solid var(--glass-border); }
-  .form-group:focus-within { border-color: rgba(180,180,180,0.4); }
-
-  .form-label {
-    position: absolute;
-    top: 28px; left: 0;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    transition: top 0.2s, font-size 0.2s, color 0.2s;
-    pointer-events: none;
-  }
-  .form-group:focus-within .form-label,
-  .form-group.filled .form-label {
-    top: 8px; font-size: 0.62rem; color: var(--silver);
-  }
-
-  .form-input, .form-textarea, .form-select {
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-family: 'Barlow', sans-serif;
-    font-size: 1rem;
-    color: var(--silver-light);
-    padding: 20px 0 8px;
-    font-weight: 300;
-    caret-color: var(--silver-light);
-  }
-  .form-textarea {
-    resize: none;
-    min-height: 100px;
-  }
-  .form-select {
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: none;
-  }
-  .form-select option {
-    background: #111;
-    color: var(--silver-light);
-  }
-
-  .form-select-arrow {
-    position: absolute;
-    right: 0; top: 50%;
-    transform: translateY(-50%);
-    color: var(--silver-dim);
-    font-size: 0.8rem;
-    pointer-events: none;
-  }
-
-  .form-submit {
-    margin-top: 48px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-
-  .btn-submit {
-    display: inline-flex; align-items: center; gap: 14px;
-    padding: 18px 52px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #080808;
-    background: linear-gradient(135deg, #aaa, #e0e0e0, #bbb);
-    border: none;
-    position: relative;
-    overflow: hidden;
-    cursor: none;
-    transition: filter 0.3s;
-  }
-  .btn-submit::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.3), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.5s;
-  }
-  .btn-submit:hover::before { transform: translateX(100%); }
-  .btn-submit:hover { filter: brightness(1.1); }
-
-  /* Toast */
-  .toast {
-    position: fixed;
-    bottom: 40px; right: 40px;
-    padding: 16px 32px;
-    background: rgba(180,180,180,0.08);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--silver-light);
-    z-index: 9999;
-    transform: translateY(80px);
-    opacity: 0;
-    transition: transform 0.4s, opacity 0.4s;
-  }
-  .toast.show { transform: translateY(0); opacity: 1; }
-
-  /* SCROLL INDICATOR */
-  .scroll-hint {
-    position: absolute;
-    bottom: 40px; left: 50%;
-    transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    animation: fadeUp 1s ease 1s both;
-  }
-  .scroll-hint span {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-  }
-  .scroll-line {
-    width: 1px; height: 40px;
-    background: linear-gradient(to bottom, var(--silver-dim), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; transform: scaleY(0.8); }
-    50% { opacity: 1; transform: scaleY(1); }
-  }
-
-  /* ABOUT VALUES */
-  .values {
-    padding: 0 60px 100px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    border-top: 1px solid var(--glass-border);
-  }
-  .value-item {
-    padding: 48px 40px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-  }
-  .value-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    background: linear-gradient(135deg, #2a2a2a, #666);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: block;
-    margin-bottom: 12px;
-  }
-  .value-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .value-desc {
-    font-size: 0.85rem;
-    color: var(--silver-dim);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 20px 28px; }
-    .services { padding: 80px 28px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .contact-section { grid-template-columns: 1fr; gap: 60px; }
-    .statement { flex-direction: column; padding: 80px 28px; }
-    .values { grid-template-columns: 1fr; padding: 0 28px 60px; }
-    .about-hero, .contact-section { padding-left: 28px; padding-right: 28px; }
-    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px; }
-  }
+/* ===== UTIL ===== */
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--margin)}
+img{max-width:100%;height:auto}
+.page{display:none}.page.active{display:block}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">SPRK</div>
-  <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home')" id="link-home" class="active">Home</a></li>
-    <li><a href="#" onclick="showPage('about')" id="link-about">About Us</a></li>
-  </ul>
+<nav class="site-nav">
+  <a href="#hero">SPRK</a>
+  <div class="links">
+    <a href="#services">Services</a>
+    <a href="#proof">Proof</a>
+    <a href="#portfolio">Work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="menu" style="display:none">Menu</a>
 </nav>
 
-<!-- ===== HOME PAGE ===== -->
-<div class="page active" id="page-home">
+<main id="main">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-lines">
-      <div class="streak"></div>
-      <div class="streak"></div>
-      <div class="streak"></div>
-    </div>
-
-    <p class="hero-tag">The future of digital — ignited</p>
-
-    <h1 class="hero-title">
-      <span class="glass-text" data-text="SPRK">SPRK</span>
-    </h1>
-
-    <p class="hero-sub">Resume · AI · Web · Redefined</p>
-
-    <div class="hero-cta">
-      <a href="#" class="btn" onclick="showPage('about')">
-        Get In Touch
-        <span>→</span>
-      </a>
-    </div>
-
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span class="marquee-item">ATS RESUME OPTIMIZATION</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">AI CHATBOTS</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">PREMIUM WEBSITES</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">ATS RESUME OPTIMIZATION</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">AI CHATBOTS</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">PREMIUM WEBSITES</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">ATS RESUME OPTIMIZATION</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">AI CHATBOTS</span>
-      <span class="marquee-item marquee-dot">●</span>
-      <span class="marquee-item">PREMIUM WEBSITES</span>
-      <span class="marquee-item marquee-dot">●</span>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-top">
+    <span style="font-family:var(--font-display);font-size:16px">SPRK</span>
+    <div class="hero-nav">
+      <a href="#services">Services</a>
+      <a href="#proof">Proof</a>
+      <a href="#portfolio">Work</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
+  <div class="hero-statement">
+    <h1><span class="line" style="transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) forwards">We build what</span><br><span class="line" style="transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) 110ms forwards">others can't.</span></h1>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-sentence">ATS resumes that get callbacks. AI chatbots that never sleep. Websites that convert. India-based, remote worldwide.</p>
+    <a class="hero-action" href="#contact">Get a free quote →</a>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <p class="section-label">What we do</p>
-    <h2 class="section-title">
-      <span class="glass-text" data-text="OUR">OUR</span><br>
-      <span class="glass-text" data-text="SERVICES">SERVICES</span>
-    </h2>
-
-    <div class="services-grid">
-
-      <!-- Service 1 -->
-      <div class="service-card" onclick="showPage('service-ats')" style="cursor:none;">
-        <div class="service-number">01</div>
-        <span class="service-icon">📄</span>
-        <h3 class="service-title">ATS Resume<br>Optimization</h3>
-        <p class="service-desc">Built specifically for freshers stepping into the job market. We craft ATS-optimized resumes that pass applicant tracking systems and land you interviews at top companies — before a human even reads your name.</p>
-        <span class="service-arrow">↗</span>
+<!-- FEATURES -->
+<section class="features" id="services">
+  <div class="wrap">
+    <p class="features-head" style="color:var(--muted)">What we do</p>
+    <div class="features-list">
+      <div class="feature-row">
+        <h3 class="feature-name">ATS Resume<br>Optimization</h3>
+        <p class="feature-desc">Resumes that pass applicant tracking systems and land interviews. Starting at ₹999.</p>
       </div>
-
-      <!-- Service 2 -->
-      <div class="service-card" onclick="showPage('service-ai')" style="cursor:none;">
-        <div class="service-number">02</div>
-        <span class="service-icon">🤖</span>
-        <h3 class="service-title">AI<br>Chatbots</h3>
-        <p class="service-desc">Intelligent, context-aware chatbots trained for your business. Whether it's customer support, lead generation, or internal operations — we build AI that works around the clock so you don't have to.</p>
-        <span class="service-arrow">↗</span>
+      <div class="feature-row">
+        <h3 class="feature-name">AI<br>Chatbots</h3>
+        <p class="feature-desc">Custom conversational AI that handles support, qualifies leads, never sleeps. Starting at ₹14,999.</p>
       </div>
-
-      <!-- Service 3 -->
-      <div class="service-card" onclick="showPage('service-web')" style="cursor:none;">
-        <div class="service-number">03</div>
-        <span class="service-icon">🌐</span>
-        <h3 class="service-title">Premium<br>Websites</h3>
-        <p class="service-desc">High-performance, visually striking websites engineered to convert. Every pixel is intentional, every interaction is fluid — because your digital presence should be as bold as your ambition.</p>
-        <span class="service-arrow">↗</span>
+      <div class="feature-row">
+        <h3 class="feature-name">Premium<br>Websites</h3>
+        <p class="feature-desc">Conversion-focused, custom-crafted sites. Not templates. Starting at ₹14,999.</p>
       </div>
-
-    </div>
-  </section>
-
-  <!-- STATEMENT -->
-  <section class="statement">
-    <h2 class="statement-text">
-      <span class="glass-text" data-text="WE DON'T BUILD">WE DON'T BUILD</span><br>
-      <span class="glass-text" data-text="ORDINARY.">ORDINARY.</span>
-    </h2>
-    <p class="statement-sub">From a fresher's first resume to an enterprise AI system — we bring the same relentless craft and precision to every single project. SPRK is where ambition meets execution.</p>
-  </section>
-
-  <footer>
-    <div class="footer-logo">SPRK</div>
-    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
-  </footer>
-
-</div>
-
-
-<!-- ===== ABOUT / CONTACT PAGE ===== -->
-<div class="page" id="page-about">
-
-  <section class="about-hero">
-    <p class="about-eyebrow">The team behind the spark</p>
-    <h1 class="about-title">
-      <span class="glass-text" data-text="ABOUT">ABOUT</span><br>
-      <span class="glass-text" data-text="US">US</span>
-    </h1>
-    <p class="about-intro">We are a lean team of designers, engineers, and AI specialists obsessed with craft. We believe great digital products aren't built — they're sparked into existence through obsession, precision, and zero compromise.</p>
-  </section>
-
-  <!-- VALUES -->
-  <div class="values">
-    <div class="value-item">
-      <span class="value-number">01</span>
-      <div class="value-title">Precision First</div>
-      <p class="value-desc">Every detail matters. We sweat the small stuff because excellence lives in the specifics.</p>
-    </div>
-    <div class="value-item">
-      <span class="value-number">02</span>
-      <div class="value-title">Speed Without Compromise</div>
-      <p class="value-desc">Fast delivery never means cutting corners. We move quickly because we plan brilliantly.</p>
-    </div>
-    <div class="value-item">
-      <span class="value-number">03</span>
-      <div class="value-title">Built to Last</div>
-      <p class="value-desc">We build products that grow with you — scalable, resilient, and always one step ahead.</p>
+      <div class="feature-row">
+        <h3 class="feature-name">SPRK<br>Scanner</h3>
+        <p class="feature-desc">Solana token safety scanner. Safety score 0–100. Free · ₹249 · ₹829.</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- CONTACT FORM -->
-  <section class="contact-section">
+<!-- PROOF -->
+<section class="proof" id="proof">
+  <div class="wrap">
+    <p class="proof-heading">Recognition</p>
+    <table class="proof-table">
+      <tr class="group-start"><td class="year">2026</td><td class="title">S.S Aqua Feeds</td><td class="body">Premium Website · Bhimavaram</td><td class="award">Launched</td></tr>
+      <tr><td class="year"></td><td class="title">ATS Resume Optimization</td><td class="body">Fresher → 6 interviews in 21 days</td><td class="award">Delivered</td></tr>
+      <tr><td class="year"></td><td class="title">AI Chatbot · D2C Brand</td><td class="body">60% support cost reduction</td><td class="award">Delivered</td></tr>
+      <tr class="group-start"><td class="year">2025</td><td class="title">Premium Website · Restaurant</td><td class="body">0 → 120 online bookings/month</td><td class="award">Delivered</td></tr>
+      <tr><td class="year"></td><td class="title">Landing Page Redesign</td><td class="body">1.8% → 4.1% conversion</td><td class="award">Delivered</td></tr>
+    </table>
+  </div>
+</section>
 
-    <div class="contact-info">
-      <h3>
-        <span class="glass-text" data-text="LET'S TALK">LET'S TALK</span>
-      </h3>
-      <p>Have a project in mind? A resume that needs a spark? An idea that needs an AI brain? Fill in the form and our team will reach out within 24 hours.</p>
-
-      <div class="contact-detail">
-        <div class="contact-item">
-          <span class="contact-item-label">Phone</span>
-          <span class="contact-item-value">+91 91827 89496</span>
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <p class="proof-heading" style="margin-bottom:48px">Featured work</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-image">
+        <img src="assets/ssaquagroup-screenshot.png" alt="S.S Aqua Feeds website" loading="lazy" width="1200" height="700">
+      </div>
+      <div class="portfolio-info">
+        <h3>S.S Aqua Feeds & Needs</h3>
+        <p>A 32-year-old aqua feeds shop in Bhimavaram had no digital presence. SPRK designed and launched a full brand website with product catalogue, enquiry flow, and WhatsApp integration — in just 7 days.</p>
+        <div class="portfolio-metrics">
+          <div class="portfolio-metric"><span class="num">7</span><span class="lbl">Days to Launch</span></div>
+          <div class="portfolio-metric"><span class="num">32</span><span class="lbl">Years Digitized</span></div>
+          <div class="portfolio-metric"><span class="num">100%</span><span class="lbl">Mobile-First</span></div>
         </div>
-        <div class="contact-item">
-          <span class="contact-item-label">Response Time</span>
-          <span class="contact-item-value">Within 24 Hours</span>
+        <a class="portfolio-link" href="https://www.ssaquagroup.com" target="_blank" rel="noopener noreferrer">Visit live site →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-layout">
+      <div class="faq-heading">
+        <h3>Questions, answered</h3>
+      </div>
+      <div class="faq-list">
+        <div class="faq-row">
+          <p class="faq-q">How much does a project cost?</p>
+          <p class="faq-a">ATS resumes from ₹999. Chatbots from ₹14,999. Websites from ₹14,999. Scanner is free.</p>
         </div>
-        <div class="contact-item">
-          <span class="contact-item-label">Based In</span>
-          <span class="contact-item-value">India — Remote Worldwide</span>
+        <div class="faq-row">
+          <p class="faq-q">How long does delivery take?</p>
+          <p class="faq-a">Resumes: 2–4 days. Chatbots: 1–3 weeks. Websites: 7–21 days.</p>
+        </div>
+        <div class="faq-row">
+          <p class="faq-q">What's included?</p>
+          <p class="faq-a">Keyword research, ATS-safe formatting, integrations, analytics, SEO basics, contact forms, 30-day support.</p>
+        </div>
+        <div class="faq-row">
+          <p class="faq-q">How do I pay?</p>
+          <p class="faq-a">UPI, bank transfer, or cards. 50% advance, balance on delivery. Invoices provided.</p>
+        </div>
+        <div class="faq-row">
+          <p class="faq-q">Do you work outside India?</p>
+          <p class="faq-a">Yes. India-based, remote worldwide. English communication.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-
-      <div class="form-group">
-        <label class="form-label">Full Name</label>
-        <input type="text" class="form-input" oninput="toggleFilled(this)" />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Email Address</label>
-        <input type="email" class="form-input" oninput="toggleFilled(this)" />
-      </div>
-
-      <div class="form-group" style="position:relative;">
-        <label class="form-label" style="top:16px; font-size:0.72rem;">Service Needed</label>
-        <select class="form-select" onchange="toggleFilled(this)">
-          <option value="" disabled selected></option>
-          <option>ATS Resume Optimization</option>
-          <option>AI Chatbot Development</option>
-          <option>Premium Website</option>
-          <option>Multiple Services</option>
-          <option>Something Else</option>
-        </select>
-        <span class="form-select-arrow">▾</span>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Your Message</label>
-        <textarea class="form-textarea" oninput="toggleFilled(this)"></textarea>
-      </div>
-
-      <div class="form-submit">
-        <button type="submit" class="btn-submit">
-          Send Message
-          <span>→</span>
-        </button>
-      </div>
-
-    </form>
-
-  </section>
-
-  <footer>
-    <div class="footer-logo">SPRK</div>
-    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
-  </footer>
-
-</div>
-
-<!-- ===== SERVICE PAGE: ATS RESUME ===== -->
-<div class="page" id="page-service-ats">
-  <section class="svc-hero">
-    <a href="#" class="back-link" onclick="showPage('home')">← Back</a>
-    <p class="about-eyebrow">Service — 01</p>
-    <h1 class="about-title">
-      <span class="glass-text" data-text="ATS RESUME">ATS RESUME</span><br>
-      <span class="glass-text" data-text="OPTIMIZATION">OPTIMIZATION</span>
-    </h1>
-    <p class="svc-intro">We reverse-engineer what ATS scanners look for and build resumes that score high before a recruiter even blinks. Tailored for freshers ready to break in.</p>
-  </section>
-
-  <section class="case-studies">
-    <p class="section-label">Real Results</p>
-    <h2 class="section-title"><span class="glass-text" data-text="CASE STUDIES">CASE STUDIES</span></h2>
-    <div class="case-grid">
-      <div class="case-card">
-        <span class="case-tag">Engineering Graduate</span>
-        <h3 class="case-title">From 0 Callbacks to 6 Interviews in 3 Weeks</h3>
-        <p class="case-body">A BE Computer Science fresher had applied to 40+ companies with zero response. After SPRK rebuilt the resume with targeted keywords, quantified project outcomes, and a clean ATS-safe format — 6 interview calls arrived within 21 days including from a top-tier product company.</p>
-        <div class="case-result"><span>40+</span> Applications Ignored → <span>6</span> Interview Calls</div>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">MBA Fresher</span>
-        <h3 class="case-title">Cracking FMCG Shortlists with Zero Experience</h3>
-        <p class="case-body">A marketing MBA graduate struggled to get shortlisted in FMCG companies due to a generic resume. SPRK restructured the document around transferable skills, internship impact metrics, and industry-specific keywords. Result: shortlisted by 3 out of 5 companies applied to post-optimization.</p>
-        <div class="case-result"><span>3/5</span> Companies Shortlisted Post-Optimization</div>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">IT Services</span>
-        <h3 class="case-title">Passing Mass Recruitment ATS Filters</h3>
-        <p class="case-body">A B.Tech graduate targeting mass IT recruiters like TCS and Infosys had a resume that consistently failed automated screening. SPRK aligned the resume format to standard ATS parsers, removed design elements breaking the scan, and boosted keyword density. ATS score jumped from 34% to 91%.</p>
-        <div class="case-result">ATS Score <span>34%</span> → <span>91%</span></div>
-      </div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-row"><a href="tel:+919182789496">+91 91827 89496</a></div>
+    <div class="contact-row">hello@sprkai.studio</div>
+    <div class="contact-row">India · Remote Worldwide</div>
+    <div class="contact-row">8 AM – 9 PM, all week</div>
+    <div class="contact-greeting">
+      <span>Let's build.</span>
+      <a class="contact-btn" href="mailto:hello@sprkai.studio" aria-label="Email us">→</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="testimonials">
-    <p class="section-label">What They Say</p>
-    <h2 class="section-title"><span class="glass-text" data-text="TESTIMONIALS">TESTIMONIALS</span></h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <p class="testi-quote">"I had been applying for months with nothing. SPRK literally changed the game — within a week of the new resume I had two calls lined up. Worth every rupee."</p>
-        <div class="testi-author">
-          <span class="testi-name">Arjun Mehta</span>
-          <span class="testi-role">B.Tech CSE, 2025 · Placed at a Bangalore Startup</span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="testi-quote">"The team understood exactly what recruiters want to see. The resume they built for me felt premium and the results proved it. Got my first shortlist from an MNC within 10 days."</p>
-        <div class="testi-author">
-          <span class="testi-name">Priya Nair</span>
-          <span class="testi-role">MBA Marketing, 2025 · Shortlisted at HUL</span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="testi-quote">"I didn't even know ATS was a thing. SPRK explained everything and delivered a resume that finally got me past the first filter. Super professional process."</p>
-        <div class="testi-author">
-          <span class="testi-name">Karthik Reddy</span>
-          <span class="testi-role">B.Tech ECE, 2024 · Placed at Wipro</span>
-        </div>
-      </div>
+<footer>
+  <div class="wrap">
+    <span>© 2026 SPRK · sprkai.studio</span>
+    <div style="display:flex;gap:24px">
+      <a href="https://wa.me/919182789496" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://scan.sprkai.studio" target="_blank" rel="noopener noreferrer">SPRK Scanner</a>
+      <a href="https://www.ssaquagroup.com" target="_blank" rel="noopener noreferrer">S.S Aqua (client)</a>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <section class="svc-cta-section">
-    <h2 class="svc-cta-title"><span class="glass-text" data-text="READY TO GET HIRED?">READY TO GET HIRED?</span></h2>
-    <p class="svc-cta-sub">Let's build a resume that opens doors. Our team will reach out within 24 hours.</p>
-    <button class="btn-submit svc-cta-btn" onclick="showPage('about')">Contact for Service →</button>
-  </section>
-
-  <footer>
-    <div class="footer-logo">SPRK</div>
-    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
-  </footer>
-</div>
-
-<!-- ===== SERVICE PAGE: AI CHATBOTS ===== -->
-<div class="page" id="page-service-ai">
-  <section class="svc-hero">
-    <a href="#" class="back-link" onclick="showPage('home')">← Back</a>
-    <p class="about-eyebrow">Service — 02</p>
-    <h1 class="about-title">
-      <span class="glass-text" data-text="AI">AI</span><br>
-      <span class="glass-text" data-text="CHATBOTS">CHATBOTS</span>
-    </h1>
-    <p class="svc-intro">Custom-built conversational AI that handles your customers, qualifies your leads, and never sleeps. Trained on your business data. Deployed on your terms.</p>
-  </section>
-
-  <section class="case-studies">
-    <p class="section-label">Real Results</p>
-    <h2 class="section-title"><span class="glass-text" data-text="CASE STUDIES">CASE STUDIES</span></h2>
-    <div class="case-grid">
-      <div class="case-card">
-        <span class="case-tag">E-Commerce</span>
-        <h3 class="case-title">24/7 Support Without a Support Team</h3>
-        <p class="case-body">A mid-size D2C brand was spending ₹1.8L/month on a 4-person support team handling repetitive order queries. SPRK deployed a trained AI chatbot that handled 83% of all tickets autonomously — order tracking, returns, FAQs — reducing support cost by 60% in month one.</p>
-        <div class="case-result">Support Cost Reduced by <span>60%</span> · Month 1</div>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">EdTech</span>
-        <h3 class="case-title">Lead Qualification at Scale</h3>
-        <p class="case-body">An online learning platform was losing leads due to slow response times. SPRK built a lead-qualifying chatbot that engaged visitors instantly, asked smart qualification questions, and routed hot leads to sales. Conversion rate on chatbot leads was 3.2× higher than form submissions.</p>
-        <div class="case-result">Lead Conversion <span>3.2×</span> Higher via Chatbot</div>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">Real Estate</span>
-        <h3 class="case-title">Site Visit Bookings on Autopilot</h3>
-        <p class="case-body">A real estate developer needed to convert website visitors into site visit bookings. SPRK deployed a WhatsApp-integrated chatbot that answered property queries, filtered serious buyers, and scheduled visits automatically — booking 40+ site visits in the first month with zero manual intervention.</p>
-        <div class="case-result"><span>40+</span> Site Visits Booked · Zero Manual Work</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <p class="section-label">What They Say</p>
-    <h2 class="section-title"><span class="glass-text" data-text="TESTIMONIALS">TESTIMONIALS</span></h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <p class="testi-quote">"The chatbot SPRK built for us handles hundreds of conversations daily. Our support team now focuses only on complex issues. It's like hiring 10 people for the cost of one."</p>
-        <div class="testi-author">
-          <span class="testi-name">Rohan Sharma</span>
-          <span class="testi-role">Founder, D2C Skincare Brand · Mumbai</span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="testi-quote">"We saw ROI within 3 weeks. The bot qualifies our leads better than half our sales team used to. SPRK delivered exactly what they promised and more."</p>
-        <div class="testi-author">
-          <span class="testi-name">Sneha Pillai</span>
-          <span class="testi-role">Head of Growth, EdTech Platform · Hyderabad</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="svc-cta-section">
-    <h2 class="svc-cta-title"><span class="glass-text" data-text="BUILD YOUR AI?">BUILD YOUR AI?</span></h2>
-    <p class="svc-cta-sub">Tell us what you need automated. We'll design and deploy a chatbot in days.</p>
-    <button class="btn-submit svc-cta-btn" onclick="showPage('about')">Contact for Service →</button>
-  </section>
-
-  <footer>
-    <div class="footer-logo">SPRK</div>
-    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
-  </footer>
-</div>
-
-<!-- ===== SERVICE PAGE: PREMIUM WEBSITES ===== -->
-<div class="page" id="page-service-web">
-  <section class="svc-hero">
-    <a href="#" class="back-link" onclick="showPage('home')">← Back</a>
-    <p class="about-eyebrow">Service — 03</p>
-    <h1 class="about-title">
-      <span class="glass-text" data-text="PREMIUM">PREMIUM</span><br>
-      <span class="glass-text" data-text="WEBSITES">WEBSITES</span>
-    </h1>
-    <p class="svc-intro">High-performance digital experiences built to convert, built to impress, built to last. We don't do templates — every website is a custom-crafted product engineered around your goals.</p>
-  </section>
-
-  <section class="case-studies">
-    <p class="section-label">Real Results</p>
-    <h2 class="section-title"><span class="glass-text" data-text="CASE STUDIES">CASE STUDIES</span></h2>
-    <div class="case-grid">
-      <div class="case-card">
-        <span class="case-tag">Personal Brand</span>
-        <h3 class="case-title">A Portfolio That Wins Before the Interview</h3>
-        <p class="case-body">A freelance UI/UX designer had a Behance profile as their portfolio. SPRK built a custom portfolio site with motion design, case study deep-dives, and a lead capture flow. Within 60 days of launch, they received 4 inbound client inquiries — compared to zero in the 6 months prior.</p>
-        <div class="case-result"><span>4</span> Inbound Clients in 60 Days · From Zero</div>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">Local Business</span>
-        <h3 class="case-title">Turning a Restaurant into a Digital Destination</h3>
-        <p class="case-body">A premium restaurant in Hyderabad had no online presence beyond Google Maps. SPRK built a cinematic website with online reservations, menu showcase, and event promotions. Table bookings via website went from 0 to 120/month within the first quarter, reducing phone-in dependency entirely.</p>
-        <div class="case-result"><span>120</span> Online Bookings/Month · Quarter 1</div>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">SaaS Product</span>
-        <h3 class="case-title">Landing Page That Doubled Trial Sign-Ups</h3>
-        <p class="case-body">A B2B SaaS startup had a functional but uninspiring landing page with a 1.8% conversion rate. SPRK redesigned it with a sharper value proposition, social proof architecture, and optimised CTAs. Conversion rate jumped to 4.1% — more than doubling sign-ups without increasing ad spend.</p>
-        <div class="case-result">Conversion <span>1.8%</span> → <span>4.1%</span> · Same Ad Budget</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <p class="section-label">What They Say</p>
-    <h2 class="section-title"><span class="glass-text" data-text="TESTIMONIALS">TESTIMONIALS</span></h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <p class="testi-quote">"SPRK didn't just build a website — they built our brand online. Every detail is intentional. Clients constantly tell us our site is the most impressive they've seen in our space."</p>
-        <div class="testi-author">
-          <span class="testi-name">Ananya Krishnan</span>
-          <span class="testi-role">Co-Founder, Boutique Architecture Firm · Chennai</span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="testi-quote">"We tried two agencies before SPRK. The difference in quality and thinking was night and day. The site they built actually converts — it's not just pretty, it works."</p>
-        <div class="testi-author">
-          <span class="testi-name">Vikram Joshi</span>
-          <span class="testi-role">Founder, B2B SaaS Tool · Pune</span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="testi-quote">"Fast, professional, and genuinely creative. SPRK understood our vision immediately and delivered something we couldn't have imagined on our own. The website pays for itself."</p>
-        <div class="testi-author">
-          <span class="testi-name">Meera Sundar</span>
-          <span class="testi-role">Owner, Premium Restaurant · Hyderabad</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="svc-cta-section">
-    <h2 class="svc-cta-title"><span class="glass-text" data-text="START YOUR PROJECT">START YOUR PROJECT</span></h2>
-    <p class="svc-cta-sub">Tell us your vision. We'll build something that makes your competitors take notes.</p>
-    <button class="btn-submit svc-cta-btn" onclick="showPage('about')">Contact for Service →</button>
-  </section>
-
-  <footer>
-    <div class="footer-logo">SPRK</div>
-    <div class="footer-copy">© 2026 SPRK. All rights reserved.</div>
-  </footer>
-</div>
-
-<style>
-  /* SERVICE PAGE SHARED STYLES */
-  .svc-hero {
-    padding: 160px 60px 80px;
-    position: relative; overflow: hidden;
-  }
-  .svc-hero::before {
-    content: '';
-    position: absolute; top: 0; right: 0;
-    width: 600px; height: 100%;
-    background: repeating-linear-gradient(-12deg, transparent, transparent 28px, rgba(150,150,150,0.02) 28px, rgba(150,150,150,0.02) 29px);
-    pointer-events: none;
-  }
-  .back-link {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    text-decoration: none;
-    margin-bottom: 32px;
-    transition: color 0.3s;
-    cursor: none;
-  }
-  .back-link:hover { color: var(--silver-light); }
-  .svc-intro {
-    font-size: 1.05rem;
-    color: var(--silver-dim);
-    line-height: 1.8;
-    max-width: 600px;
-    font-weight: 300;
-    margin-top: 32px;
-  }
-
-  /* CASE STUDIES */
-  .case-studies {
-    padding: 80px 60px 100px;
-    border-top: 1px solid var(--glass-border);
-  }
-  .case-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 60px;
-  }
-  .case-card {
-    padding: 48px 40px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    display: flex; flex-direction: column; gap: 16px;
-    position: relative; overflow: hidden;
-    transition: border-color 0.3s;
-  }
-  .case-card:hover { border-color: rgba(180,180,180,0.25); }
-  .case-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(200,200,200,0.15), transparent);
-    opacity: 0; transition: opacity 0.4s;
-  }
-  .case-card:hover::before { opacity: 1; }
-  .case-tag {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--silver-dim);
-    border: 1px solid var(--glass-border);
-    padding: 4px 12px;
-    display: inline-block;
-    width: fit-content;
-  }
-  .case-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    color: var(--silver-light);
-    line-height: 1.2;
-  }
-  .case-body {
-    font-size: 0.875rem;
-    color: var(--silver-dim);
-    line-height: 1.75;
-    font-weight: 300;
-    flex: 1;
-  }
-  .case-result {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    color: var(--silver-dim);
-    border-top: 1px solid var(--glass-border);
-    padding-top: 16px;
-    margin-top: 4px;
-  }
-  .case-result span {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    background: linear-gradient(135deg, #aaa, #e0e0e0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* TESTIMONIALS */
-  .testimonials {
-    padding: 80px 60px 100px;
-    border-top: 1px solid var(--glass-border);
-  }
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2px;
-    margin-top: 60px;
-  }
-  .testi-card {
-    padding: 48px 44px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    display: flex; flex-direction: column; justify-content: space-between; gap: 32px;
-    position: relative;
-  }
-  .testi-card::before {
-    content: '\201C';
-    position: absolute;
-    top: 24px; left: 36px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5rem;
-    line-height: 1;
-    background: linear-gradient(135deg, #222, #444);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    pointer-events: none;
-  }
-  .testi-quote {
-    font-size: 0.95rem;
-    color: var(--silver);
-    line-height: 1.8;
-    font-weight: 300;
-    font-style: italic;
-    padding-top: 32px;
-  }
-  .testi-author { display: flex; flex-direction: column; gap: 4px; }
-  .testi-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--silver-light);
-  }
-  .testi-role {
-    font-size: 0.78rem;
-    color: var(--silver-dim);
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  /* CTA SECTION */
-  .svc-cta-section {
-    padding: 120px 60px;
-    text-align: center;
-    border-top: 1px solid var(--glass-border);
-    display: flex; flex-direction: column; align-items: center; gap: 24px;
-  }
-  .svc-cta-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 6rem);
-    line-height: 0.9;
-  }
-  .svc-cta-sub {
-    font-size: 0.95rem;
-    color: var(--silver-dim);
-    font-weight: 300;
-    max-width: 480px;
-    line-height: 1.7;
-    margin-bottom: 8px;
-  }
-  .svc-cta-btn {
-    font-size: 1rem;
-    padding: 20px 64px;
-    letter-spacing: 0.2em;
-  }
-
-  @media (max-width: 900px) {
-    .case-grid { grid-template-columns: 1fr; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .svc-hero, .case-studies, .testimonials, .svc-cta-section { padding-left: 28px; padding-right: 28px; }
-  }
-</style>
-
-<!-- TOAST -->
-<div class="toast" id="toast">Message sent — we'll be in touch ✦</div>
+</main>
 
 <script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const cursorRing = document.getElementById('cursorRing');
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
-  });
-
-  (function animRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top = ringY + 'px';
-    requestAnimationFrame(animRing);
-  })();
-
-  document.querySelectorAll('a, button, .service-card, .btn, .btn-submit').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.width = '14px'; cursor.style.height = '14px';
-      cursorRing.style.width = '50px'; cursorRing.style.height = '50px';
-      cursorRing.style.borderColor = 'rgba(200,200,200,0.7)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.width = '8px'; cursor.style.height = '8px';
-      cursorRing.style.width = '36px'; cursorRing.style.height = '36px';
-      cursorRing.style.borderColor = 'rgba(180,180,180,0.4)';
-    });
-  });
-
-  // Page switching
-  function showPage(name) {
-    event && event.preventDefault();
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    document.getElementById('link-' + name).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return false;
-  }
-
-  // Form helpers
-  function toggleFilled(el) {
-    el.closest('.form-group').classList.toggle('filled', el.value.length > 0);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    e.target.reset();
-    e.target.querySelectorAll('.form-group').forEach(g => g.classList.remove('filled'));
-    setTimeout(() => toast.classList.remove('show'), 3500);
-  }
-
-  // Scroll-reveal for service cards
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, i * 100);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(40px)';
-    card.style.transition = 'opacity 0.7s ease, transform 0.7s ease, border-color 0.4s';
-    observer.observe(card);
-  });
+// IntersectionObserver for fade-in
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('fade-up');obs.unobserve(en.target)}})
+},{threshold:.1});
+document.querySelectorAll('.feature-row,.portfolio-image,.faq-row').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
