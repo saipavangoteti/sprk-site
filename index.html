@@ -188,6 +188,7 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
 }
 html{scroll-padding-top:88px}
 body{background:var(--bg);background-image:radial-gradient(ellipse at 70% 4%,rgba(105,126,52,.11),transparent 38%)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:3px;background:var(--bg);z-index:10001;pointer-events:none}
 ::selection{background:var(--accent);color:#10120e}
 .wrap{max-width:1320px;padding-inline:clamp(22px,5vw,76px)}
 nav{padding:15px 0;background:rgba(9,10,8,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(238,245,219,.08)}
