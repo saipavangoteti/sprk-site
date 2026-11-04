@@ -159,7 +159,8 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
 .toast.show{transform:translateX(-50%) translateY(0)}
 
 /* PAGE */
-.page{display:none}.page.active{display:block}
+.page{display:none;opacity:0;transition:opacity .3s var(--ease-out)}.page.active{display:block;opacity:1;animation:pageIn .4s var(--ease-out)}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .8s ease both}
 @media(prefers-reduced-motion:reduce){.fade-up{animation:none}}
