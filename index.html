@@ -214,18 +214,13 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
             <a class="btn btn-outline" href="#" onclick="showPage('service-web')">See Our Work</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <svg class="hero-sketch" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="60" stroke="#ff4a1f" stroke-width="1" fill="none" opacity="0.2"/>
-            <circle cx="70" cy="70" r="40" stroke="#ff4a1f" stroke-width="1" fill="none" opacity="0.3"/>
-            <circle cx="70" cy="70" r="20" stroke="#ff4a1f" stroke-width="1" fill="none" opacity="0.4"/>
-            <circle cx="70" cy="70" r="6" fill="#ff4a1f" opacity="0.8"/>
-            <line x1="70" y1="10" x2="70" y2="30" stroke="#ff4a1f" stroke-width="1" opacity="0.3"/>
-            <line x1="70" y1="110" x2="70" y2="130" stroke="#ff4a1f" stroke-width="1" opacity="0.3"/>
-            <line x1="10" y1="70" x2="30" y2="70" stroke="#ff4a1f" stroke-width="1" opacity="0.3"/>
-            <line x1="110" y1="70" x2="130" y2="70" stroke="#ff4a1f" stroke-width="1" opacity="0.3"/>
-            <path d="M30 70 Q70 30 110 70" stroke="#ff6b3d" stroke-width="1" fill="none" opacity="0.4"/>
-            <path d="M30 70 Q70 110 110 70" stroke="#ff6b3d" stroke-width="1" fill="none" opacity="0.4"/>
+        <div class="hero-visual" style="display:flex;align-items:center;justify-content:center">
+          <svg id="heroEye" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto">
+            <ellipse cx="100" cy="60" rx="90" ry="50" stroke="#ff4a1f" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="100" cy="60" r="38" fill="#18191b" stroke="#ff4a1f" stroke-width="2"/>
+            <circle id="pupil" cx="100" cy="60" r="18" fill="#ff4a1f"/>
+            <circle id="pupilHighlight" cx="108" cy="52" r="6" fill="#ff6b3d" opacity="0.6"/>
+            <circle cx="100" cy="60" r="38" fill="none" stroke="#ff4a1f" stroke-width="1" opacity="0.15"/>
           </svg>
         </div>
       </div>
@@ -601,6 +596,28 @@ function toggleMenu(){document.getElementById('navLinks').classList.toggle('open
 function closeMenu(){document.getElementById('navLinks').classList.remove('open')}
 function handleSubmit(e){e.preventDefault();const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);e.target.reset()}
 
+// Eye tracking
+const eye=document.getElementById('heroEye');
+const pupil=document.getElementById('pupil');
+const highlight=document.getElementById('pupilHighlight');
+if(eye&&pupil){
+  document.addEventListener('mousemove',e=>{
+    const r=eye.getBoundingClientRect();
+    const cx=r.left+r.width/2;
+    const cy=r.top+r.height/2;
+    const dx=e.clientX-cx;
+    const dy=e.clientY-cy;
+    const dist=Math.sqrt(dx*dx+dy*dy);
+    const maxMove=22;
+    const scale=Math.min(dist,maxMove*4)/ (maxMove*4);
+    const moveX=(dx/dist||0)*Math.min(dist,maxMove);
+    const moveY=(dy/dist||0)*Math.min(dist,maxMove);
+    pupil.setAttribute('cx',100+moveX);
+    pupil.setAttribute('cy',60+moveY);
+    highlight.setAttribute('cx',108+moveX);
+    highlight.setAttribute('cy',52+moveY);
+  });
+}
 const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('fade-up');obs.unobserve(en.target)}})},{threshold:.1});
 document.querySelectorAll('.service-card,.stat,.portfolio-image,.testi-card').forEach(el=>obs.observe(el));
 </script>
