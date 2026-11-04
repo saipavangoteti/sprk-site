@@ -642,7 +642,6 @@ if(bot&&pupilL){
   document.addEventListener('touchmove',e=>{if(e.touches.length>0)updateBot(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
   document.addEventListener('touchstart',e=>{if(e.touches.length>0)updateBot(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
 }
-}
 const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('fade-up');obs.unobserve(en.target)}})},{threshold:.1});
 document.querySelectorAll('.service-card,.stat,.portfolio-image,.testi-card').forEach(el=>obs.observe(el));
 </script>
