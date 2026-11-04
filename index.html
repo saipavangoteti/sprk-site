@@ -32,7 +32,7 @@
 :root{
   --black:#050508;--deep:#0a0a0f;--card:#10101a;--border:rgba(56,189,248,.12);
   --cyan:#38bdf8;--purple:#a78bfa;--green:#34d399;--amber:#f59e0b;
-  --silver:#c8c8d4;--silver-dim:#7a7a8a;--white:#f4f4f8;
+  --silver:#c8c8d4;--silver-dim:#8e8e9e;--white:#f4f4f8;
   --glass:rgba(255,255,255,.03);--glass-border:rgba(255,255,255,.08);
 }
 html{scroll-behavior:smooth}
@@ -45,7 +45,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 @media(pointer:coarse){body{cursor:auto}.cursor,.cursor-ring{display:none}}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
 nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;position:sticky;top:0;z-index:100;background:rgba(5,5,8,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--glass-border)}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;color:var(--cyan);text-decoration:none}
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{color:var(--silver-dim);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;transition:color .2s;cursor:pointer}
 .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
@@ -56,23 +56,22 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 @media(max-width:768px){.hamburger{display:flex}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(5,5,8,.95);backdrop-filter:blur(16px);padding:16px 28px;border-bottom:1px solid var(--glass-border)}.nav-links.open{display:flex}.nav-links a{padding:12px 0;border-bottom:1px solid var(--glass-border);width:100%}}
 .hero{padding:80px 0 60px;text-align:center}
 .hero-badge{display:inline-block;padding:6px 16px;border:1px solid var(--cyan);border-radius:999px;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px;background:rgba(56,189,248,.05)}
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:.95;letter-spacing:.02em;background:linear-gradient(135deg,#fff 0%,var(--cyan) 50%,var(--purple) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:20px}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:20px}
 .hero-sub{font-size:1.15rem;color:var(--silver-dim);max-width:640px;margin:0 auto 24px;font-weight:300}
 .hero-benefits{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:center;margin-bottom:32px}
 .hero-benefit{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver);padding:6px 14px;border:1px solid var(--glass-border);background:var(--glass);border-radius:4px}
 .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all .25s;cursor:pointer;border:none}
 .btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:var(--black)}
-.btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 12px 30px rgba(56,189,248,.3)}
+.btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
 .btn-outline{border:1px solid var(--glass-border);color:var(--silver);background:var(--glass)}
 .btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
 .section{padding:80px 0}
-.section-label{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:.02em;margin-bottom:16px}
 .section-sub{color:var(--silver-dim);max-width:600px;margin-bottom:40px;font-weight:300}
 .stats-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:40px 0}
 .stat-card{background:var(--glass);border:1px solid var(--glass-border);padding:24px;border-radius:12px;text-align:center;backdrop-filter:blur(12px)}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--cyan)}
 .stat-label{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);margin-top:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .card{background:var(--glass);border:1px solid var(--glass-border);padding:28px;border-radius:14px;backdrop-filter:blur(12px);transition:all .3s}
@@ -136,8 +135,8 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 .footer a{color:var(--silver-dim);text-decoration:none;font-size:.9rem;display:block;margin-bottom:6px;transition:color .2s}
 .footer a:hover{color:var(--cyan)}
 .footer-copy{text-align:center;color:var(--silver-dim);font-size:.8rem;padding-top:20px;border-top:1px solid var(--glass-border)}
-.floating-cta{position:fixed;bottom:24px;right:24px;z-index:9990;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;text-decoration:none;background:linear-gradient(135deg,var(--cyan),var(--purple));color:var(--black);border-radius:8px;box-shadow:0 12px 30px rgba(56,189,248,.3);transition:transform .2s,box-shadow .2s}
-.floating-cta:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(56,189,248,.4)}
+.floating-cta{position:fixed;bottom:24px;right:24px;z-index:9990;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;text-decoration:none;background:linear-gradient(135deg,var(--cyan),var(--purple));color:var(--black);border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s}
+.floating-cta:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.35)}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card);border:1px solid var(--cyan);color:var(--white);padding:12px 24px;border-radius:8px;z-index:9999;transition:transform .3s;font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .page{display:none}.page.active{display:block}
@@ -148,7 +147,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 .legal-body h3{color:var(--white);margin:24px 0 8px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;font-size:.9rem}
 .legal-body p{margin-bottom:12px}
 .svc-hero{padding:60px 0 30px}
-.svc-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;background:linear-gradient(135deg,#fff,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.svc-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;color:var(--white);margin-bottom:12px}
 .svc-pricing{margin:40px 0}
 .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:24px}
 .case-card{background:var(--glass);border:1px solid var(--glass-border);padding:24px;border-radius:12px}
@@ -214,7 +213,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 
   <section class="section">
     <div class="wrap">
-      <p class="section-label">What we do</p>
       <h2 class="section-title">Our Services</h2>
       <p class="section-sub">From a fresher's first resume to an enterprise AI system — same craft, same precision.</p>
       <div class="grid">
@@ -266,7 +264,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Recent Work</p>
       <h2 class="section-title">Featured Project</h2>
       <div class="portfolio-card">
         <div class="portfolio-shot"><img src="assets/ssaquagroup-screenshot.png" alt="S.S Aqua Feeds and Needs website screenshot" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;"></div>
@@ -290,7 +287,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 <div class="page" id="page-products">
   <section class="section">
     <div class="wrap">
-      <p class="section-label">What we build</p>
       <h2 class="section-title">Our Products</h2>
       <div class="proof" style="margin-bottom:32px">
         <span class="hero-badge" style="margin-bottom:12px">⭐ Star Product</span>
@@ -330,7 +326,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 <div class="page" id="page-about">
   <section class="section">
     <div class="wrap">
-      <p class="section-label">The team behind the spark</p>
       <h2 class="section-title">About Us</h2>
       <p class="about-intro" style="color:var(--silver-dim);max-width:700px;margin-bottom:32px;font-weight:300">We are a lean team of designers, engineers, and AI specialists obsessed with craft. We believe great digital products aren't built — they're sparked into existence through obsession, precision, and zero compromise.</p>
       <div class="grid" style="margin-bottom:40px">
@@ -339,7 +334,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
         <div class="card"><h3>Built to Last</h3><p>We build products that grow with you — scalable, resilient, and always one step ahead.</p></div>
       </div>
 
-      <p class="section-label">Frequently Asked</p>
       <h2 class="section-title">Questions Answered</h2>
       <div class="faq-list">
         <details class="faq-item"><summary class="faq-q">How much does a project cost?</summary><p>ATS Resume Optimization starts at ₹999 (Starter), ₹1,999 (Professional) and ₹3,499 (Premium). AI Chatbots range from ₹14,999 to ₹69,999+. Premium Websites from ₹14,999 to ₹99,999. SPRK Scanner is free, with Quick Scan at ₹249 and Deep Scan at ₹829. Exact pricing confirmed after a free quote.</p></details>
@@ -388,14 +382,12 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 <div class="page" id="page-service-ats">
   <section class="svc-hero">
     <div class="wrap">
-      <p class="section-label">Service — 01</p>
       <h1>ATS Resume Optimization</h1>
       <p style="color:var(--silver-dim);max-width:600px;font-weight:300">We reverse-engineer what ATS scanners look for and build resumes that score high before a recruiter even blinks. Tailored for freshers ready to break in.</p>
     </div>
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Pricing</p>
       <h2 class="section-title">Plans</h2>
       <div class="grid">
         <div class="card"><h3>Starter</h3><div class="price">₹999</div><ul><li>1 revision</li><li>Delivery in 2 days</li><li>ATS-optimized format</li></ul></div>
@@ -406,7 +398,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Real Results</p>
       <h2 class="section-title">Case Studies</h2>
       <div class="case-grid">
         <div class="case-card"><span class="case-tag">Engineering Graduate</span><h3 class="case-title">From 0 Callbacks to 6 Interviews in 3 Weeks</h3><p class="case-body">A BE Computer Science fresher had applied to 40+ companies with zero response. After SPRK rebuilt the resume with targeted keywords, quantified project outcomes, and a clean ATS-safe format — 6 interview calls arrived within 21 days including from a top-tier product company.</p><div class="case-result"><span>40+</span> Applications Ignored → <span>6</span> Interview Calls</div></div>
@@ -417,7 +408,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">What They Say</p>
       <h2 class="section-title">Testimonials</h2>
       <div class="testi-grid">
         <div class="testi-card"><p class="testi-quote">"I had been applying for months with nothing. SPRK literally changed the game — within a week of the new resume I had two calls lined up. Worth every rupee."</p><div class="testi-author"><span class="testi-name">Arjun Mehta</span><span class="testi-role">B.Tech CSE, 2025 · Placed at a Bangalore Startup</span></div></div>
@@ -442,7 +432,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 <div class="page" id="page-service-ai">
   <section class="svc-hero">
     <div class="wrap">
-      <p class="section-label">Service — 02</p>
       <h1>AI Chatbots</h1>
       <p style="color:var(--silver-dim);max-width:600px;font-weight:300">Custom-built conversational AI that handles your customers, qualifies your leads, and never sleeps. Trained on your business data. Deployed on your terms.</p>
       <a class="btn btn-outline" href="https://gharbot.streamlit.app" target="_blank" rel="noopener noreferrer" style="margin-top:16px">Demo — Try Now →</a>
@@ -450,7 +439,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Pricing</p>
       <h2 class="section-title">Plans</h2>
       <div class="grid">
         <div class="card"><h3>Starter</h3><div class="price">₹14,999</div><ul><li>FAQ chatbot</li><li>Website integration</li><li>Up to 100 Q&A</li></ul></div>
@@ -461,7 +449,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Real Results</p>
       <h2 class="section-title">Case Studies</h2>
       <div class="case-grid">
         <div class="case-card"><span class="case-tag">E-Commerce</span><h3 class="case-title">24/7 Support Without a Support Team</h3><p class="case-body">A mid-size D2C brand was spending ₹1.8L/month on a 4-person support team handling repetitive order queries. SPRK deployed a trained AI chatbot that handled 83% of all tickets autonomously — order tracking, returns, FAQs — reducing support cost by 60% in month one.</p><div class="case-result">Support Cost Reduced by <span>60%</span> · Month 1</div></div>
@@ -472,7 +459,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">What They Say</p>
       <h2 class="section-title">Testimonials</h2>
       <div class="testi-grid">
         <div class="testi-card"><p class="testi-quote">"The chatbot SPRK built for us handles hundreds of conversations daily. Our support team now focuses only on complex issues. It's like hiring 10 people for the cost of one."</p><div class="testi-author"><span class="testi-name">Rohan Sharma</span><span class="testi-role">Founder, D2C Skincare Brand · Mumbai</span></div></div>
@@ -496,14 +482,12 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 <div class="page" id="page-service-web">
   <section class="svc-hero">
     <div class="wrap">
-      <p class="section-label">Service — 03</p>
       <h1>Premium Websites</h1>
       <p style="color:var(--silver-dim);max-width:600px;font-weight:300">High-performance digital experiences built to convert, built to impress, built to last. We don't do templates — every website is a custom-crafted product engineered around your goals.</p>
     </div>
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Pricing</p>
       <h2 class="section-title">Plans</h2>
       <div class="grid">
         <div class="card"><h3>Landing Page</h3><div class="price">₹14,999</div><ul><li>Single page</li><li>Responsive design</li><li>Contact form</li></ul></div>
@@ -514,7 +498,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Recent Work</p>
       <h2 class="section-title">Featured Project</h2>
       <div class="portfolio-card">
         <div class="portfolio-shot"><img src="assets/ssaquagroup-screenshot.png" alt="S.S Aqua Feeds and Needs website screenshot" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;"></div>
@@ -534,7 +517,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">Real Results</p>
       <h2 class="section-title">Case Studies</h2>
       <div class="case-grid">
         <div class="case-card"><span class="case-tag">Personal Brand</span><h3 class="case-title">A Portfolio That Wins Before the Interview</h3><p class="case-body">A freelance UI/UX designer had a Behance profile as their portfolio. SPRK built a custom portfolio site with motion design, case study deep-dives, and a lead capture flow. Within 60 days of launch, they received 4 inbound client inquiries — compared to zero in the 6 months prior.</p><div class="case-result"><span>4</span> Inbound Clients in 60 Days · From Zero</div></div>
@@ -545,7 +527,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
   </section>
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="section-label">What They Say</p>
       <h2 class="section-title">Testimonials</h2>
       <div class="testi-grid">
         <div class="testi-card"><p class="testi-quote">"SPRK didn't just build a website — they built our brand online. Every detail is intentional. Clients constantly tell us our site is the most impressive they've seen in our space."</p><div class="testi-author"><span class="testi-name">Ananya Krishnan</span><span class="testi-role">Co-Founder, Boutique Architecture Firm · Chennai</span></div></div>
@@ -569,7 +550,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 <!-- ===== LEGAL PAGES ===== -->
 <div class="page" id="page-privacy">
   <section class="section"><div class="wrap">
-    <p class="section-label">Policies</p><h2 class="section-title">Privacy Policy</h2>
+    <h2 class="section-title">Privacy Policy</h2>
     <div class="legal-body">
       <p><strong>Last updated: June 2026</strong></p>
       <h3>1. Information We Collect</h3><p>When you use our contact form or engage our services, we collect: Personal Identification (name, email, phone), Service Preferences (type of service), Communications (messages via contact form).</p>
@@ -585,7 +566,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 
 <div class="page" id="page-terms">
   <section class="section"><div class="wrap">
-    <p class="section-label">Policies</p><h2 class="section-title">Terms of Service</h2>
+    <h2 class="section-title">Terms of Service</h2>
     <div class="legal-body">
       <p><strong>Last updated: June 2026</strong></p>
       <h3>1. Acceptance of Terms</h3><p>By accessing or using the SPRK website and services, you agree to be bound by these Terms. If you do not agree, please do not use our services.</p>
@@ -602,7 +583,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0
 
 <div class="page" id="page-refund">
   <section class="section"><div class="wrap">
-    <p class="section-label">Policies</p><h2 class="section-title">Refund Policy</h2>
+    <h2 class="section-title">Refund Policy</h2>
     <div class="legal-body">
       <p><strong>Last updated: June 2026</strong></p>
       <h3>1. Service-Based Refunds</h3><p>Refunds handled case-by-case depending on project stage.</p>
