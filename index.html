@@ -7,313 +7,599 @@
 <meta name="description" content="SPRK helps freshers land jobs with ATS-optimized resumes, builds custom AI chatbots, and crafts premium websites. India-based, remote worldwide.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sprkai.studio/">
-<link rel="preconnect" href="https://api.fontshare.com">
-<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0a0a0a;--surface:#151515;--ink:#efefef;--muted:#8c8c8c;
-  --accent:#b11226;--accent-ink:#ffffff;
-  --font-display:'Gambarino',serif;--font-text:'General Sans',sans-serif;
-  --step-small:clamp(0.8125rem,0.79rem+0.1vw,0.875rem);
-  --step-body:clamp(1.0625rem,1rem+0.25vw,1.1875rem);
-  --step-lead:clamp(1.25rem,1.1rem+0.7vw,1.625rem);
-  --step-head:clamp(2rem,1.3rem+3.2vw,4rem);
-  --step-display:clamp(3rem,1rem+9vw,9rem);
-  --margin:clamp(2rem,4vw,4rem);
-  --gutter:clamp(1rem,2vw,2rem);
-  --section:clamp(6rem,14vw,16rem);
-  --radius:0px;
+  --bg:#0c0c14;--deep:#12121e;--card:#18182a;--border:rgba(255,255,255,.08);
+  --amber:#f59e0b;--amber-light:#fbbf24;--amber-dim:#b45309;
+  --cream:#f5f0e8;--silver:#a8a098;--silver-dim:#6a6560;
+  --white:#faf8f4;--black:#08080c;
+  --glass:rgba(255,255,255,.03);--glass-border:rgba(255,255,255,.08);
+  --font-display:'Fraunces',serif;--font-text:'Manrope',sans-serif;
   --ease-out:cubic-bezier(0.22,1,0.36,1);
   --ease-expo:cubic-bezier(0.16,1,0.3,1);
-  --ease-in-out:cubic-bezier(0.76,0,0.24,1);
-  --t-press:140ms;--t-hover:180ms;--t-ui:240ms;--t-reveal:900ms;
-  --glass:rgba(255,255,255,.02);--glass-border:rgba(255,255,255,.08);
+  --t-hover:180ms;--t-ui:240ms;--t-reveal:800ms;
+  --radius:16px;
 }
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-text);font-size:var(--step-body);line-height:1.5;font-kerning:normal;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:var(--font-text);font-size:1rem;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto}}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:var(--accent-ink);padding:8px 16px;z-index:10000;font-weight:500;transition:top .2s}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--amber);color:var(--black);padding:8px 16px;z-index:10000;font-weight:600;transition:top .2s}
 .skip-link:focus{top:0}
-h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;text-wrap:balance;hyphens:none;margin:0;letter-spacing:-.02em}
-img,video,svg,canvas{display:block;max-width:100%}
-img,video{height:auto;background:var(--surface)}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;margin:0}
+img,video,svg{display:block;max-width:100%}
+img,video{height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
 button{background:none;border:0;padding:0;cursor:pointer}
-a{color:inherit}
-::selection{background:var(--accent);color:var(--accent-ink)}
-
-/* ===== HERO ===== */
-.hero{min-height:100vh;padding:44px var(--margin) 72px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
-.hero-top{display:flex;justify-content:space-between;align-items:baseline}
-.hero-wordmark{font-family:var(--font-display);font-size:16px;font-weight:400;letter-spacing:-.02em}
-.hero-nav{display:flex;gap:32px;font-size:14px;font-weight:400}
-.hero-nav a{color:var(--ink);text-decoration:none;cursor:pointer;transition:color var(--t-hover) var(--ease-out)}
-.hero-nav a:hover{color:var(--accent)}
-.hero-nav .menu{display:none}
-@media(max-width:768px){.hero-nav .links{display:none}.hero-nav .menu{display:block}}
-.hero-statement{margin-top:auto;margin-bottom:72px;max-width:100%}
-.hero-statement h1{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,5vw,72px);letter-spacing:-.02em;line-height:.95;margin:0;overflow:hidden}
-.hero-statement h1 .line{display:block;transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) forwards}
-.hero-statement h1 .line:nth-child(2){animation-delay:110ms}
-.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
-.hero-sentence{font-size:18px;max-width:32ch;line-height:1.4;color:var(--muted);font-weight:400}
-.hero-action{font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color var(--t-hover) var(--ease-out),border-color var(--t-hover) var(--ease-out)}
-.hero-action:hover{color:var(--accent);border-color:var(--accent)}
-@keyframes maskReveal{to{transform:translateY(0)}}
-
-/* ===== FEATURES ===== */
-.features{padding:var(--section) 0}
-.features-list{margin-top:0}
-.features-head{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.5vw,56px);letter-spacing:-.02em;line-height:1;color:var(--muted);margin-bottom:.35em}
-.feature-row{display:grid;grid-template-columns:8fr 4fr;gap:var(--gutter);align-items:baseline;padding:.35em 0;transition:opacity var(--t-ui) var(--ease-out)}
-.feature-row:hover{opacity:1}
-.feature-row:not(:hover){opacity:1}
-.feature-name{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.5vw,56px);letter-spacing:-.02em;line-height:1}
-.feature-desc{font-size:16px;line-height:1.5;color:var(--muted);max-width:40ch}
-@media(max-width:768px){.feature-row{grid-template-columns:1fr;gap:8px}.feature-desc{padding-left:0;margin-bottom:28px}}
-
-/* ===== PROOF (RECOGNITION TABLE) ===== */
-.proof{padding:var(--section) 0;background:var(--surface)}
-.proof-heading{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.02em;line-height:1.1;margin-bottom:72px;color:var(--muted)}
-.proof-table{width:100%;border-collapse:collapse}
-.proof-table tr{padding:14px 0}
-.proof-table td{padding:14px 0;font-size:17px;vertical-align:baseline}
-.proof-table .year{width:16.6%;font-family:var(--font-display);font-size:22px;color:var(--muted)}
-.proof-table .title{width:33.3%;color:var(--ink)}
-.proof-table .body{width:33.3%;color:var(--muted)}
-.proof-table .award{width:16.6%;text-align:right;color:var(--accent);font-weight:500}
-.proof-table tr:nth-child(even){background:rgba(255,255,255,.02)}
-.proof-table tr.group-start .year{color:var(--ink)}
-@media(max-width:768px){.proof-table tr{display:block;padding:0 0 24px}.proof-table td{display:block;width:100%!important;padding:0}.proof-table .year{font-size:22px;margin-bottom:4px}.proof-table .title{margin-bottom:2px}}
-
-/* ===== PORTFOLIO ===== */
-.portfolio{padding:var(--section) 0}
-.portfolio-heading{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.02em;line-height:1.1;color:var(--muted);margin-bottom:48px}
-.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.portfolio-image{overflow:hidden}
-.portfolio-image img{width:100%;height:auto;display:block;transition:transform var(--t-reveal) var(--ease-soft)}
-.portfolio-image:hover img{transform:scale(1.02)}
-.portfolio-info h3{font-family:var(--font-display);font-weight:400;font-size:clamp(24px,3vw,40px);letter-spacing:-.02em;margin-bottom:16px}
-.portfolio-info p{font-size:18px;line-height:1.5;color:var(--muted);max-width:44ch;margin-bottom:24px}
-.portfolio-metrics{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:24px}
-.portfolio-metric{display:flex;flex-direction:column}
-.portfolio-metric .num{font-family:var(--font-display);font-size:2.2rem;font-weight:400;letter-spacing:-.02em}
-.portfolio-metric .lbl{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-.portfolio-link{font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color var(--t-hover) var(--ease-out),border-color var(--t-hover) var(--ease-out)}
-.portfolio-link:hover{color:var(--accent);border-color:var(--accent)}
-@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;gap:32px}}
-
-/* ===== FAQ ===== */
-.faq{padding:var(--section) 0;background:var(--surface)}
-.faq-layout{display:grid;grid-template-columns:1fr 2fr;gap:48px}
-.faq-heading{font-family:var(--font-display);font-weight:400;font-size:clamp(24px,2.6vw,40px);letter-spacing:-.02em;line-height:1.1;color:var(--muted)}
-.faq-list{display:flex;flex-direction:column;gap:64px}
-.faq-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);align-items:baseline}
-.faq-q{font-family:var(--font-display);font-weight:400;font-size:clamp(24px,2.6vw,40px);letter-spacing:-.02em;line-height:1.1}
-.faq-a{font-size:17px;line-height:1.55;color:var(--muted);max-width:40ch}
-@media(max-width:768px){.faq-layout{grid-template-columns:1fr;gap:32px}.faq-row{grid-template-columns:1fr;gap:8px}.faq-a{margin-bottom:40px}}
-
-/* ===== CONTACT ===== */
-.contact{padding:var(--section) 0}
-.contact-row{font-family:var(--font-display);font-weight:400;font-size:clamp(32px,4.5vw,64px);letter-spacing:-.02em;line-height:1.0;padding:20px 0;border-bottom:1px solid rgba(239,239,239,.1)}
-.contact-row a{color:inherit;text-decoration:none;transition:color var(--t-hover) var(--ease-out)}
-.contact-row a:hover{color:var(--accent)}
-.contact-greeting{display:flex;align-items:center;gap:24px;margin-top:40px}
-.contact-greeting span{font-family:var(--font-display);font-weight:400;font-size:clamp(44px,6vw,88px);letter-spacing:-.02em}
-.contact-btn{width:.9em;height:.9em;background:var(--accent);color:var(--accent-ink);border:none;border-radius:50%;font-size:inherit;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:transform var(--t-hover) var(--ease-out)}
-.contact-btn:hover{transform:scale(1.05)}
-.contact-btn:active{transform:scale(.97)}
-@media(max-width:768px){.contact-row{font-size:9.6vw;padding:16px 0}.contact-greeting{flex-wrap:wrap}}
-
-/* ===== FOOTER ===== */
-footer{padding:40px var(--margin);border-top:1px solid rgba(239,239,239,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px;color:var(--muted)}
-footer a{color:var(--muted);text-decoration:none;transition:color var(--t-hover) var(--ease-out)}
-footer a:hover{color:var(--accent)}
-
-/* ===== MOTION ===== */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{animation:fadeUp var(--t-reveal) var(--ease-expo) both}
-@media(prefers-reduced-motion:reduce){.fade-up{animation:none}}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:var(--black)}
 
 /* ===== NAV ===== */
-.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:baseline;padding:24px var(--margin);background:transparent}
-.site-nav a{color:var(--ink);text-decoration:none;font-family:var(--font-text);font-weight:500;font-size:14px;letter-spacing:0;transition:color var(--t-hover) var(--ease-out)}
-.site-nav a:hover{color:var(--accent)}
-.site-nav .links{display:flex;gap:32px}
-@media(max-width:768px){.site-nav .links{display:none}.site-nav .menu{display:block}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;position:sticky;top:0;z-index:100;background:rgba(12,12,20,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.nav-logo{font-family:var(--font-display);font-size:1.8rem;font-weight:600;color:var(--amber);text-decoration:none}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--silver);text-decoration:none;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;transition:color var(--t-hover) var(--ease-out);cursor:pointer;font-weight:400}
+.nav-links a:hover,.nav-links a.active{color:var(--amber)}
+.nav-cta{padding:10px 22px;border:1px solid var(--amber);color:var(--amber);border-radius:var(--radius);font-weight:500;transition:all var(--t-hover) var(--ease-out);background:transparent}
+.nav-cta:hover{background:var(--amber);color:var(--black)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--silver);transition:.3s}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(12,12,20,.95);backdrop-filter:blur(20px);padding:16px 32px;border-bottom:1px solid var(--glass-border)}.nav-links.open{display:flex}.nav-links a{padding:14px 0;border-bottom:1px solid var(--glass-border);width:100%}}
 
-/* ===== UTIL ===== */
-.wrap{max-width:1200px;margin:0 auto;padding:0 var(--margin)}
-img{max-width:100%;height:auto}
+/* ===== HERO ===== */
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:100px 0 60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 40%,rgba(245,158,11,.06),transparent 60%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(245,158,11,.03),transparent);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-content{position:relative;z-index:1}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-dim);margin-bottom:20px;opacity:0;animation:fadeUp .8s ease .2s forwards}
+.hero h1{font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:600;line-height:1.05;letter-spacing:-.02em;color:var(--white);margin-bottom:20px;opacity:0;animation:fadeUp .8s ease .4s forwards}
+.hero h1 em{font-style:italic;color:var(--amber);font-weight:400}
+.hero-sub{font-size:1.05rem;color:var(--silver);max-width:480px;margin-bottom:32px;font-weight:300;line-height:1.7;opacity:0;animation:fadeUp .8s ease .6s forwards}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease .8s forwards}
+.hero-visual{position:relative;opacity:0;animation:fadeUp .8s ease .5s forwards}
+.hero-visual img{width:100%;border-radius:var(--radius);box-shadow:0 40px 80px rgba(0,0,0,.5);transform:perspective(1000px) rotateY(-3deg);transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+.hero-visual img:hover{transform:perspective(1000px) rotateY(0deg) translateZ(15px)}
+.hero-sketch{position:absolute;top:-20px;right:-20px;width:120px;height:120px;opacity:.6}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .3s cubic-bezier(.25,.46,.45,.94);cursor:pointer;border:none;border-radius:var(--radius)}
+.btn-primary{background:var(--amber);color:var(--black)}
+.btn-primary:hover{background:var(--amber-light);transform:translateY(-2px);box-shadow:0 16px 40px rgba(245,158,11,.2)}
+.btn-primary:active{transform:translateY(0) scale(.97)}
+.btn-outline{border:1px solid var(--amber-dim);color:var(--amber);background:transparent}
+.btn-outline:hover{border-color:var(--amber);background:rgba(245,158,11,.05);transform:translateY(-2px)}
+.btn-outline:active{transform:translateY(0) scale(.97)}
+
+/* ===== SECTIONS ===== */
+.section{padding:100px 0;position:relative}
+.section-label{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-dim);margin-bottom:12px;font-weight:500}
+.section-title{font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:600;line-height:1.1;letter-spacing:-.01em;color:var(--white);margin-bottom:16px}
+.section-sub{color:var(--silver);max-width:560px;font-weight:300;font-size:1.05rem;line-height:1.7;margin-bottom:40px}
+
+/* ===== STATS ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--glass-border);border:1px solid var(--glass-border);margin:60px 0;border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--deep);padding:36px 20px;text-align:center;transition:background .3s}
+.stat:hover{background:var(--card)}
+.stat-num{font-family:var(--font-display);font-size:3rem;font-weight:600;color:var(--amber);line-height:1;margin-bottom:8px}
+.stat-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);font-weight:400}
+
+/* ===== SERVICES ===== */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.service-card{background:var(--card);border:1px solid var(--glass-border);padding:36px 28px;border-radius:var(--radius);position:relative;overflow:hidden;transition:all .3s cubic-bezier(.25,.46,.45,.94);transform:perspective(800px) rotateX(0) rotateY(0)}
+.service-card:hover{border-color:rgba(245,158,11,.3);transform:perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.4)}
+.service-card h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:var(--white);margin-bottom:10px}
+.service-card p{color:var(--silver);font-size:.9rem;font-weight:300;line-height:1.7;margin-bottom:14px}
+.service-card .price{font-family:var(--font-display);font-size:1.5rem;color:var(--amber);font-weight:600;margin:14px 0}
+.service-card ul{list-style:none;padding:0}
+.service-card ul li{padding:3px 0;font-size:.85rem;color:var(--silver-dim);font-weight:300}
+.service-card ul li::before{content:'— ';color:var(--amber-dim)}
+
+/* ===== PORTFOLIO ===== */
+.portfolio-section{padding:100px 0;background:var(--deep);position:relative;overflow:hidden}
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:40px}
+.portfolio-image{position:relative;overflow:hidden;border-radius:var(--radius);transform:perspective(1000px) rotateY(-2deg);transition:transform .5s cubic-bezier(.25,.46,.45,.94);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.portfolio-image:hover{transform:perspective(1000px) rotateY(0deg) translateZ(15px);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.portfolio-image img{width:100%;height:auto;display:block}
+.portfolio-content h3{font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--white);margin-bottom:14px}
+.portfolio-content p{color:var(--silver);font-size:1rem;font-weight:300;line-height:1.7;margin-bottom:20px}
+.portfolio-metrics{display:flex;gap:20px;flex-wrap:wrap}
+.portfolio-metric{text-align:center}
+.portfolio-metric .num{font-family:var(--font-display);font-size:2.2rem;font-weight:600;color:var(--amber);display:block;line-height:1}
+.portfolio-metric .lbl{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dim);margin-top:4px}
+
+/* ===== TESTIMONIALS ===== */
+.testi-section{padding:100px 0}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.testi-card{background:var(--card);border:1px solid var(--glass-border);padding:32px 28px;border-radius:var(--radius);transition:all .3s cubic-bezier(.25,.46,.45,.94)}
+.testi-card:hover{transform:translateY(-6px);border-color:rgba(245,158,11,.2);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.testi-quote{font-family:var(--font-display);font-size:1.1rem;font-style:italic;font-weight:400;color:var(--cream);line-height:1.6;margin-bottom:18px}
+.testi-author{display:flex;flex-direction:column}
+.testi-name{font-weight:500;color:var(--white);font-size:.9rem}
+.testi-role{font-size:.75rem;color:var(--silver-dim);margin-top:2px}
+
+/* ===== FAQ ===== */
+.faq-section{padding:100px 0;background:var(--deep)}
+.faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-top:40px}
+.faq-title{font-family:var(--font-display);font-size:2.2rem;font-weight:600;color:var(--white)}
+.faq-item{border-bottom:1px solid var(--glass-border);padding:20px 0}
+.faq-item summary{font-family:var(--font-display);font-size:1.2rem;font-weight:500;color:var(--white);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .3s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-family:var(--font-display);font-size:1.4rem;color:var(--amber);transition:transform .3s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item[open] summary{color:var(--amber)}
+.faq-item p{color:var(--silver);font-size:.95rem;font-weight:300;line-height:1.7;margin-top:10px;max-width:60ch}
+
+/* ===== CONTACT ===== */
+.contact-section{padding:100px 0;text-align:center}
+.contact-section h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:600;color:var(--white);margin-bottom:12px}
+.contact-section p{color:var(--silver);font-size:1.05rem;font-weight:300;max-width:480px;margin:0 auto 32px}
+.contact-info{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:40px}
+.contact-item{text-align:center}
+.contact-item .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-dim);margin-bottom:6px}
+.contact-item .val{font-family:var(--font-display);font-size:1.2rem;color:var(--white)}
+.contact-item a{color:var(--white);text-decoration:none;transition:color .3s}
+.contact-item a:hover{color:var(--amber)}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:48px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:28px}
+.footer h4{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--amber);margin-bottom:10px}
+.footer a{color:var(--silver);text-decoration:none;font-size:.85rem;display:block;margin-bottom:6px;transition:color .3s;font-weight:300}
+.footer a:hover{color:var(--amber)}
+.footer-copy{text-align:center;color:var(--silver-dim);font-size:.8rem;padding-top:20px;border-top:1px solid var(--glass-border)}
+
+/* ===== FLOATING CTA ===== */
+.floating-cta{position:fixed;bottom:24px;right:24px;z-index:9990;display:inline-flex;align-items:center;gap:10px;padding:12px 24px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;background:var(--amber);color:var(--black);box-shadow:0 8px 32px rgba(0,0,0,.4);transition:transform .2s,box-shadow .3s;border-radius:var(--radius)}
+.floating-cta:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.floating-cta:active{transform:translateY(0) scale(.97)}
+
+/* ===== TOAST ===== */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card);border:1px solid var(--amber);color:var(--cream);padding:14px 28px;border-radius:var(--radius);z-index:9999;transition:transform .4s;font-size:.9rem}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ===== PAGE ===== */
 .page{display:none}.page.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .8s ease both}
+@media(prefers-reduced-motion:reduce){.fade-up{animation:none}}
+@media(max-width:768px){
+  .hero h1{font-size:2.5rem}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{order:-1}
+  .services-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr;gap:32px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .floating-cta{bottom:16px;right:16px;padding:10px 18px;font-size:.7rem}
+}
+@media(max-width:480px){.hero h1{font-size:2rem}.stats{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="site-nav">
-  <a href="#hero">SPRK</a>
-  <div class="links">
-    <a href="#services">Services</a>
-    <a href="#proof">Proof</a>
-    <a href="#portfolio">Work</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
+<nav>
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%">
+    <a class="nav-logo" href="#" onclick="showPage('home')">SPRK</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#" onclick="showPage('home')" data-page="home">Home</a>
+      <a href="#" onclick="showPage('products')" data-page="products">Products</a>
+      <a href="#" onclick="showPage('about')" data-page="about">About</a>
+      <a href="#" onclick="showPage('service-ats')" data-page="service-ats">Resumes</a>
+      <a href="#" onclick="showPage('service-ai')" data-page="service-ai">Chatbots</a>
+      <a href="#" onclick="showPage('service-web')" data-page="service-web">Websites</a>
+      <a href="#" onclick="showPage('about')" class="nav-cta">Get a Quote</a>
+    </div>
   </div>
-  <a href="#contact" class="menu" style="display:none">Menu</a>
 </nav>
 
 <main id="main">
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-top">
-    <span style="font-family:var(--font-display);font-size:16px">SPRK</span>
-  </div>
-  <div class="hero-statement">
-    <h1><span class="line" style="transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) forwards">We build what</span><br><span class="line" style="transform:translateY(100%);animation:maskReveal var(--t-reveal) var(--ease-expo) 110ms forwards">others can't.</span></h1>
-  </div>
-  <div class="hero-bottom">
-    <p class="hero-sentence">ATS resumes that get callbacks. AI chatbots that never sleep. Websites that convert. India-based, remote worldwide.</p>
-    <a class="hero-action" href="#contact">Get a free quote →</a>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="features" id="services">
-  <div class="wrap">
-    <p class="features-head" style="color:var(--muted)">What we do</p>
-    <div class="features-list">
-      <div class="feature-row">
-        <h3 class="feature-name">ATS Resume<br>Optimization</h3>
-        <p class="feature-desc">Resumes that pass applicant tracking systems and land interviews. Starting at ₹999.</p>
-      </div>
-      <div class="feature-row">
-        <h3 class="feature-name">AI<br>Chatbots</h3>
-        <p class="feature-desc">Custom conversational AI that handles support, qualifies leads, never sleeps. Starting at ₹14,999.</p>
-      </div>
-      <div class="feature-row">
-        <h3 class="feature-name">Premium<br>Websites</h3>
-        <p class="feature-desc">Conversion-focused, custom-crafted sites. Not templates. Starting at ₹14,999.</p>
-      </div>
-      <div class="feature-row">
-        <h3 class="feature-name">SPRK<br>Scanner</h3>
-        <p class="feature-desc">Solana token safety scanner. Safety score 0–100. Free · ₹249 · ₹829.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section style="padding:0;overflow:hidden">
-  <img src="https://picsum.photos/id/407/1600/900" alt="Hands at work" loading="lazy" style="width:100%;height:40vh;object-fit:cover;display:block;filter:grayscale(0.3) contrast(1.1)">
-</section>
-
-<section class="proof" id="proof">
-  <div class="wrap">
-    <p class="proof-heading">Recognition</p>
-    <table class="proof-table">
-      <tr class="group-start"><td class="year">2026</td><td class="title">S.S Aqua Feeds</td><td class="body">Premium Website · Bhimavaram</td><td class="award">Launched</td></tr>
-      <tr><td class="year"></td><td class="title">ATS Resume Optimization</td><td class="body">Fresher → 6 interviews in 21 days</td><td class="award">Delivered</td></tr>
-      <tr><td class="year"></td><td class="title">AI Chatbot · D2C Brand</td><td class="body">60% support cost reduction</td><td class="award">Delivered</td></tr>
-      <tr class="group-start"><td class="year">2025</td><td class="title">Premium Website · Restaurant</td><td class="body">0 → 120 online bookings/month</td><td class="award">Delivered</td></tr>
-      <tr><td class="year"></td><td class="title">Landing Page Redesign</td><td class="body">1.8% → 4.1% conversion</td><td class="award">Delivered</td></tr>
-    </table>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="portfolio" id="portfolio">
-  <div class="wrap">
-    <p class="proof-heading" style="margin-bottom:48px">Featured work</p>
-    <div class="portfolio-grid">
-      <div class="portfolio-image">
-        <img src="assets/ssaquagroup-screenshot.png" alt="S.S Aqua Feeds website" loading="lazy" width="1200" height="700">
-      </div>
-      <div class="portfolio-info">
-        <h3>S.S Aqua Feeds & Needs</h3>
-        <p>A 32-year-old aqua feeds shop in Bhimavaram had no digital presence. SPRK designed and launched a full brand website with product catalogue, enquiry flow, and WhatsApp integration — in just 7 days.</p>
-        <div class="portfolio-metrics">
-          <div class="portfolio-metric"><span class="num">7</span><span class="lbl">Days to Launch</span></div>
-          <div class="portfolio-metric"><span class="num">32</span><span class="lbl">Years Digitized</span></div>
-          <div class="portfolio-metric"><span class="num">100%</span><span class="lbl">Mobile-First</span></div>
+<!-- ===== HOME ===== -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="hero-eyebrow">India-based · Remote Worldwide</p>
+          <h1>Where ambition<br><em>meets execution.</em></h1>
+          <p class="hero-sub">ATS resumes that get callbacks. AI chatbots that never sleep. Websites that convert. Premium digital services for businesses that refuse to be ordinary.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#" onclick="showPage('about')">Get a Free Quote →</a>
+            <a class="btn btn-outline" href="#" onclick="showPage('service-web')">See Our Work</a>
+          </div>
         </div>
-        <a class="portfolio-link" href="https://www.ssaquagroup.com" target="_blank" rel="noopener noreferrer">Visit live site →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="wrap">
-    <div class="faq-layout">
-      <div class="faq-heading">
-        <h3>Questions, answered</h3>
-      </div>
-      <div class="faq-list">
-        <div class="faq-row">
-          <p class="faq-q">How much does a project cost?</p>
-          <p class="faq-a">ATS resumes from ₹999. Chatbots from ₹14,999. Websites from ₹14,999. Scanner is free.</p>
-        </div>
-        <div class="faq-row">
-          <p class="faq-q">How long does delivery take?</p>
-          <p class="faq-a">Resumes: 2–4 days. Chatbots: 1–3 weeks. Websites: 7–21 days.</p>
-        </div>
-        <div class="faq-row">
-          <p class="faq-q">What's included?</p>
-          <p class="faq-a">Keyword research, ATS-safe formatting, integrations, analytics, SEO basics, contact forms, 30-day support.</p>
-        </div>
-        <div class="faq-row">
-          <p class="faq-q">How do I pay?</p>
-          <p class="faq-a">UPI, bank transfer, or cards. 50% advance, balance on delivery. Invoices provided.</p>
-        </div>
-        <div class="faq-row">
-          <p class="faq-q">Do you work outside India?</p>
-          <p class="faq-a">Yes. India-based, remote worldwide. English communication.</p>
+        <div class="hero-visual">
+          <svg class="hero-sketch" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="50" stroke="#f59e0b" stroke-width="1" fill="none" opacity="0.3"/>
+            <path d="M20 60 Q60 20 100 60 Q60 100 20 60" stroke="#f59e0b" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="60" cy="60" r="8" fill="#f59e0b" opacity="0.6"/>
+            <line x1="60" y1="10" x2="60" y2="30" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+            <line x1="60" y1="90" x2="60" y2="110" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+            <line x1="10" y1="60" x2="30" y2="60" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+            <line x1="90" y1="60" x2="110" y2="60" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+          </svg>
+          <img src="https://picsum.photos/id/1067/600/400" alt="City skyline" loading="lazy" width="600" height="400">
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="contact-row"><a href="tel:+919182789496">+91 91827 89496</a></div>
-    <div class="contact-row">hello@sprkai.studio</div>
-    <div class="contact-row">India · Remote Worldwide</div>
-    <div class="contact-row">8 AM – 9 PM, all week</div>
-    <div class="contact-greeting">
-      <span>Let's build.</span>
-      <a class="contact-btn" href="mailto:hello@sprkai.studio" aria-label="Email us">→</a>
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">What we do</p>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">From a fresher's first resume to an enterprise AI system — same craft, same precision.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>ATS Resume Optimization</h3>
+          <p>Resumes that pass applicant tracking systems and land interviews. Built for freshers & professionals.</p>
+          <div class="price">₹999 – ₹3,499</div>
+          <ul><li>ATS-safe format</li><li>Keyword optimization</li><li>LinkedIn + cover letter</li><li>2-day delivery</li></ul>
+          <a class="btn btn-outline" href="#" onclick="showPage('service-ats')" style="margin-top:16px">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <h3>AI Chatbots</h3>
+          <p>Custom conversational AI that handles support, qualifies leads, and never sleeps. Trained on your data.</p>
+          <div class="price">₹14,999 – ₹69,999+</div>
+          <ul><li>FAQ / custom / RAG bots</li><li>WhatsApp & API integration</li><li>Lead capture + analytics</li><li>Deployed in days</li></ul>
+          <a class="btn btn-outline" href="#" onclick="showPage('service-ai')" style="margin-top:16px">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <h3>Premium Websites</h3>
+          <p>Conversion-focused, custom-crafted sites — not templates. Built to convert, built to impress.</p>
+          <div class="price">₹14,999 – ₹99,999</div>
+          <ul><li>Landing / Business / Brand tiers</li><li>Responsive + SEO basics</li><li>Analytics + contact forms</li><li>CMS on Premium</li></ul>
+          <a class="btn btn-outline" href="#" onclick="showPage('service-web')" style="margin-top:16px">Learn More →</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 SPRK · sprkai.studio</span>
-    <div style="display:flex;gap:24px">
-      <a href="https://wa.me/919182789496" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="https://scan.sprkai.studio" target="_blank" rel="noopener noreferrer">SPRK Scanner</a>
-      <a href="https://www.ssaquagroup.com" target="_blank" rel="noopener noreferrer">S.S Aqua (client)</a>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Projects Delivered</div></div>
+        <div class="stat"><div class="stat-num">3×</div><div class="stat-label">Conversion Lift</div></div>
+        <div class="stat"><div class="stat-num">24hr</div><div class="stat-label">Response Time</div></div>
+        <div class="stat"><div class="stat-num">7 days</div><div class="stat-label">Fastest Launch</div></div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div style="background:var(--deep);border:1px solid var(--glass-border);border-radius:var(--radius);padding:48px;position:relative;overflow:hidden">
+        <h2 class="section-title" style="margin-bottom:12px">We don't build ordinary.</h2>
+        <p style="color:var(--silver);max-width:560px;margin-bottom:24px;font-weight:300">From a fresher's first resume to an enterprise AI system — we bring the same relentless craft and precision to every single project.</p>
+        <a class="btn btn-primary" href="#" onclick="showPage('about')">Start Your Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">Recent Work</p>
+      <h2 class="section-title">Featured Project</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-image">
+          <img src="assets/ssaquagroup-screenshot.png" alt="S.S Aqua Feeds website" loading="lazy">
+        </div>
+        <div class="portfolio-content">
+          <h3>S.S Aqua Feeds & Needs</h3>
+          <p>A 32-year-old aqua feeds shop in Bhimavaram had no digital presence. SPRK designed and launched a full brand website with product catalogue, enquiry flow, and WhatsApp integration — in just 7 days.</p>
+          <div class="portfolio-metrics">
+            <div class="portfolio-metric"><span class="num">7</span><span class="lbl">Days to Launch</span></div>
+            <div class="portfolio-metric"><span class="num">32</span><span class="lbl">Years Digitized</span></div>
+            <div class="portfolio-metric"><span class="num">100%</span><span class="lbl">Mobile-First</span></div>
+          </div>
+          <a class="btn btn-outline" href="https://www.ssaquagroup.com" target="_blank" rel="noopener noreferrer" style="margin-top:20px">Visit Live Site →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== PRODUCTS ===== -->
+<div class="page" id="page-products">
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">What we build</p>
+      <h2 class="section-title">Our Products</h2>
+      <div style="background:var(--deep);border:1px solid var(--glass-border);border-radius:var(--radius);padding:40px;margin-bottom:32px">
+        <span class="section-label" style="display:block;margin-bottom:8px">⭐ Star Product</span>
+        <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:600;margin-bottom:8px;color:var(--white)">SPRK Scanner</h3>
+        <p style="color:var(--silver);font-size:.95rem;margin-bottom:16px">A tool that checks if any Solana token is safe or a scam. Paste a token address → get a safety score out of 100.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+          <div class="portfolio-metric"><span class="num">7</span><span class="lbl">Checks</span></div>
+          <div class="portfolio-metric"><span class="num">0–100</span><span class="lbl">Score</span></div>
+          <div class="portfolio-metric"><span class="num">AI</span><span class="lbl">Report</span></div>
+        </div>
+        <a class="btn btn-primary" href="https://scan.sprkai.studio" target="_blank" rel="noopener noreferrer">🛡️ Scan Token Now →</a>
+        <p style="margin-top:8px;color:var(--silver-dim);font-size:.8rem">Free plan · Quick Scan ₹249 · Deep Scan ₹829</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><h3>ATS Resume Optimization</h3><p>ATS-optimized resumes that land interviews. Starting at ₹999.</p><a class="btn btn-outline" href="#" onclick="showPage('service-ats')">Learn More →</a></div>
+        <div class="service-card"><h3>AI Chatbots</h3><p>Custom AI assistants for support, leads, and operations. Starting at ₹14,999.</p><a class="btn btn-outline" href="#" onclick="showPage('service-ai')">Learn More →</a></div>
+        <div class="service-card"><h3>Premium Websites</h3><p>Conversion-focused websites that make your brand stand out. Starting at ₹14,999.</p><a class="btn btn-outline" href="#" onclick="showPage('service-web')">Learn More →</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div class="page" id="page-about">
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">The team behind the spark</p>
+      <h2 class="section-title">About Us</h2>
+      <p style="color:var(--silver);max-width:640px;font-weight:300;margin-bottom:40px;font-size:1.05rem">We are a lean team of designers, engineers, and AI specialists obsessed with craft. We believe great digital products aren't built — they're sparked into existence through obsession, precision, and zero compromise.</p>
+      <div class="services-grid" style="margin-bottom:48px">
+        <div class="service-card"><h3>Precision First</h3><p>Every detail matters. We sweat the small stuff because excellence lives in the specifics.</p></div>
+        <div class="service-card"><h3>Speed Without Compromise</h3><p>Fast delivery never means cutting corners. We move quickly because we plan brilliantly.</p></div>
+        <div class="service-card"><h3>Built to Last</h3><p>We build products that grow with you — scalable, resilient, and always one step ahead.</p></div>
+      </div>
+
+      <p class="section-label">Frequently Asked</p>
+      <h2 class="section-title">Questions Answered</h2>
+      <div class="faq-grid">
+        <div><h3 class="faq-title">Everything you need to know before we start.</h3></div>
+        <div>
+          <details class="faq-item"><summary>How much does a project cost?</summary><p>ATS Resume Optimization starts at ₹999 (Starter), ₹1,999 (Professional) and ₹3,499 (Premium). AI Chatbots range from ₹14,999 to ₹69,999+. Premium Websites from ₹14,999 to ₹99,999. SPRK Scanner is free, with Quick Scan at ₹249 and Deep Scan at ₹829.</p></details>
+          <details class="faq-item"><summary>How long does delivery take?</summary><p>ATS resumes: 2–4 days. AI chatbots: 1–3 weeks. Premium websites: 7–21 days (S.S Aqua shipped in 7 days).</p></details>
+          <details class="faq-item"><summary>How many revisions are included?</summary><p>Starter: 1 revision. Professional: 2. Premium: unlimited for 7 days. Websites and chatbots: 2–3 rounds.</p></details>
+          <details class="faq-item"><summary>What's included in each service?</summary><p>ATS: keyword research, ATS-safe formatting, achievement quantification, optional cover letter & LinkedIn. Chatbots: training on your data, lead capture, integrations, analytics. Websites: responsive design, SEO basics, contact forms, speed optimization, optional CMS.</p></details>
+          <details class="faq-item"><summary>How do I pay?</summary><p>UPI, bank transfer, or cards. 50% advance to start; balance on delivery. Invoices for every payment.</p></details>
+          <details class="faq-item"><summary>Do you offer refunds?</summary><p>Full refund if we fail to deliver the agreed scope. Once work begins and deliverables are approved, refunds are not available.</p></details>
+          <details class="faq-item"><summary>What is your process?</summary><p>1) Free quote & scope → 2) 50% advance → 3) Design/build → 4) Review & revisions → 5) Final delivery & balance → 6) 30 days post-launch support.</p></details>
+          <details class="faq-item"><summary>Do you work outside India?</summary><p>Yes. India-based, remote worldwide. English communication; payments in INR or USD equivalent.</p></details>
+        </div>
+      </div>
+
+      <div class="contact-info" style="margin-top:60px">
+        <div class="contact-item"><div class="label">Phone</div><div class="val"><a href="tel:+919182789496">+91 91827 89496</a></div></div>
+        <div class="contact-item"><div class="label">Response Time</div><div class="val">Within 24 Hours</div></div>
+        <div class="contact-item"><div class="label">Location</div><div class="val">India — Remote Worldwide</div></div>
+        <div class="contact-item"><div class="label">Email</div><div class="val"><a href="mailto:hello@sprkai.studio">hello@sprkai.studio</a></div></div>
+      </div>
+      <div style="margin-top:48px;text-align:center">
+        <a class="btn btn-primary" href="https://wa.me/919182789496" target="_blank" rel="noopener noreferrer">Message on WhatsApp →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SERVICE: ATS ===== -->
+<div class="page" id="page-service-ats">
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">Service — 01</p>
+      <h2 class="section-title">ATS Resume Optimization</h2>
+      <p style="color:var(--silver);max-width:600px;font-weight:300;margin-bottom:32px">We reverse-engineer what ATS scanners look for and build resumes that score high before a recruiter even blinks. Tailored for freshers ready to break in.</p>
+      <div class="services-grid">
+        <div class="service-card"><h3>Starter</h3><div class="price">₹999</div><ul><li>1 revision</li><li>Delivery in 2 days</li><li>ATS-optimized format</li></ul></div>
+        <div class="service-card" style="border-color:var(--gold)"><h3>Professional ⭐</h3><div class="price">₹1,999</div><ul><li>ATS Resume + LinkedIn optimization</li><li>2 revisions</li><li>Cover letter included</li></ul></div>
+        <div class="service-card"><h3>Premium</h3><div class="price">₹3,499</div><ul><li>ATS Resume + LinkedIn + Cover Letter</li><li>Job strategy call (30 min)</li><li>Unlimited revisions for 7 days</li></ul></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">Real Results</p>
+      <h2 class="section-title">Case Studies</h2>
+      <div class="services-grid">
+        <div class="service-card"><h3>From 0 Callbacks to 6 Interviews</h3><p>A BE CSE fresher applied to 40+ companies with zero response. SPRK rebuilt the resume → 6 interview calls in 21 days.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">40+ ignored → 6 calls</div></div>
+        <div class="service-card"><h3>Cracking FMCG Shortlists</h3><p>An MBA fresher got shortlisted by 3 of 5 FMCG companies after SPRK restructured around transferable skills and metrics.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">3/5 shortlisted</div></div>
+        <div class="service-card"><h3>Passing Mass Recruitment ATS</h3><p>A B.Tech grad's ATS score jumped from 34% to 91% after SPRK aligned format to standard parsers.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">34% → 91%</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">What They Say</p>
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testi-grid">
+        <div class="testi-card"><p class="testi-quote">"I had been applying for months with nothing. SPRK literally changed the game — within a week I had two calls lined up."</p><div class="testi-author"><span class="testi-name">Arjun Mehta</span><span class="testi-role">B.Tech CSE, 2025 · Bangalore Startup</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"The team understood exactly what recruiters want. Got my first MNC shortlist within 10 days."</p><div class="testi-author"><span class="testi-name">Priya Nair</span><span class="testi-role">MBA Marketing, 2025 · Shortlisted at HUL</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"I didn't even know ATS was a thing. SPRK explained everything and delivered a resume that got me past the first filter."</p><div class="testi-author"><span class="testi-name">Karthik Reddy</span><span class="testi-role">B.Tech ECE, 2024 · Placed at Wipro</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"I had zero interview calls for 4 months. After SPRK rewrote my resume, I got shortlisted by TCS and Infosys within two weeks."</p><div class="testi-author"><span class="testi-name">Sneha Patil</span><span class="testi-role">B.E. IT, 2025 · TCS NQT</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"The resume felt premium and the results proved it — first MNC callback within 10 days."</p><div class="testi-author"><span class="testi-name">Mohammed Faizan</span><span class="testi-role">B.Tech ECE, 2024 · Cognizant</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"The job strategy call alone was worth the Premium plan. Highly recommended for freshers."</p><div class="testi-author"><span class="testi-name">Divya Menon</span><span class="testi-role">MBA HR, 2025 · Deloitte</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0;text-align:center">
+    <div class="wrap">
+      <h2 class="section-title">Ready to Get Hired?</h2>
+      <p style="color:var(--silver);margin-bottom:24px">Let's build a resume that opens doors.</p>
+      <a class="btn btn-primary" href="#" onclick="showPage('about')">Contact for Service →</a>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SERVICE: AI ===== -->
+<div class="page" id="page-service-ai">
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">Service — 02</p>
+      <h2 class="section-title">AI Chatbots</h2>
+      <p style="color:var(--silver);max-width:600px;font-weight:300;margin-bottom:32px">Custom-built conversational AI that handles your customers, qualifies your leads, and never sleeps. Trained on your business data. Deployed on your terms.</p>
+      <a class="btn btn-outline" href="https://gharbot.streamlit.app" target="_blank" rel="noopener noreferrer" style="margin-bottom:32px">Demo — Try Now →</a>
+      <div class="services-grid">
+        <div class="service-card"><h3>Starter</h3><div class="price">₹14,999</div><ul><li>FAQ chatbot</li><li>Website integration</li><li>Up to 100 Q&A</li></ul></div>
+        <div class="service-card" style="border-color:var(--gold)"><h3>Growth ⭐</h3><div class="price">₹34,999</div><ul><li>Custom chatbot</li><li>Lead capture</li><li>WhatsApp / API integration</li><li>Analytics dashboard</li></ul></div>
+        <div class="service-card"><h3>Business</h3><div class="price">₹69,999+</div><ul><li>RAG chatbot</li><li>Multiple data sources</li><li>Custom UI</li><li>Full deployment</li></ul></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">Real Results</p>
+      <h2 class="section-title">Case Studies</h2>
+      <div class="services-grid">
+        <div class="service-card"><h3>24/7 Support Without a Team</h3><p>A D2C brand spent ₹1.8L/month on 4 support agents. SPRK's chatbot handled 83% of tickets — 60% cost reduction in month one.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">−60% support cost</div></div>
+        <div class="service-card"><h3>Lead Qualification at Scale</h3><p>An EdTech platform's chatbot leads converted 3.2× higher than form submissions.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">3.2× conversion</div></div>
+        <div class="service-card"><h3>Site Visits on Autopilot</h3><p>A real estate chatbot booked 40+ site visits in month one with zero manual intervention.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">40+ visits booked</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">What They Say</p>
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testi-grid">
+        <div class="testi-card"><p class="testi-quote">"The chatbot handles hundreds of conversations daily. Like hiring 10 people for the cost of one."</p><div class="testi-author"><span class="testi-name">Rohan Sharma</span><span class="testi-role">Founder, D2C Skincare · Mumbai</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"We saw ROI within 3 weeks. The bot qualifies leads better than half our sales team."</p><div class="testi-author"><span class="testi-name">Sneha Pillai</span><span class="testi-role">Head of Growth, EdTech · Hyderabad</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"Our support inbox dropped 70% in month one. Best investment we made."</p><div class="testi-author"><span class="testi-name">Rahul Verma</span><span class="testi-role">Founder, LocalMart · Delhi</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"SPRK built a RAG chatbot trained on our entire policy library. Instant, accurate answers."</p><div class="testi-author"><span class="testi-name">Anita Desai</span><span class="testi-role">Operations Head, FinServe · Mumbai</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"From WhatsApp integration to analytics dashboard — delivered on time, worked flawlessly."</p><div class="testi-author"><span class="testi-name">Kiran Rao</span><span class="testi-role">Owner, Kiran's Kitchen · Bengaluru</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0;text-align:center">
+    <div class="wrap">
+      <h2 class="section-title">Build Your AI?</h2>
+      <p style="color:var(--silver);margin-bottom:24px">Tell us what you need automated. We'll design and deploy in days.</p>
+      <a class="btn btn-primary" href="#" onclick="showPage('about')">Contact for Service →</a>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SERVICE: WEB ===== -->
+<div class="page" id="page-service-web">
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">Service — 03</p>
+      <h2 class="section-title">Premium Websites</h2>
+      <p style="color:var(--silver);max-width:600px;font-weight:300;margin-bottom:32px">High-performance digital experiences built to convert, built to impress, built to last. We don't do templates — every website is custom-crafted.</p>
+      <div class="services-grid">
+        <div class="service-card"><h3>Landing Page</h3><div class="price">₹14,999</div><ul><li>Single page</li><li>Responsive design</li><li>Contact form</li></ul></div>
+        <div class="service-card" style="border-color:var(--gold)"><h3>Business ⭐</h3><div class="price">₹29,999</div><ul><li>5–8 pages</li><li>Responsive + SEO</li><li>Analytics + forms</li></ul></div>
+        <div class="service-card"><h3>Premium Brand</h3><div class="price">₹59,999–99,999</div><ul><li>Custom animations</li><li>CMS integration</li><li>Blog setup</li><li>Speed + SEO</li></ul></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">Featured Project</p>
+      <h2 class="section-title">Recent Work</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-image">
+          <img src="assets/ssaquagroup-screenshot.png" alt="S.S Aqua Feeds website" loading="lazy">
+        </div>
+        <div class="portfolio-content">
+          <h3>S.S Aqua Feeds & Needs</h3>
+          <p>A 32-year-old aqua feeds shop in Bhimavaram had no digital presence. SPRK designed and launched a full brand website with product catalogue, enquiry flow, and WhatsApp integration — in just 7 days.</p>
+          <div class="portfolio-metrics">
+            <div class="portfolio-metric"><span class="num">7</span><span class="lbl">Days to Launch</span></div>
+            <div class="portfolio-metric"><span class="num">32</span><span class="lbl">Years Digitized</span></div>
+            <div class="portfolio-metric"><span class="num">100%</span><span class="lbl">Mobile-First</span></div>
+          </div>
+          <a class="btn btn-outline" href="https://www.ssaquagroup.com" target="_blank" rel="noopener noreferrer" style="margin-top:20px">Visit Live Site →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">Real Results</p>
+      <h2 class="section-title">Case Studies</h2>
+      <div class="services-grid">
+        <div class="service-card"><h3>Portfolio That Wins</h3><p>A freelance designer went from 0 to 4 inbound clients in 60 days after SPRK built their portfolio site.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">4 clients in 60 days</div></div>
+        <div class="service-card"><h3>Restaurant → Digital</h3><p>A Hyderabad restaurant went from 0 to 120 online bookings/month after SPRK built their site.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">120 bookings/mo</div></div>
+        <div class="service-card"><h3>Landing Page 2× Conversions</h3><p>A SaaS startup's conversion went from 1.8% to 4.1% after SPRK redesigned their landing page.</p><div style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-top:8px">1.8% → 4.1%</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="section-label">What They Say</p>
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testi-grid">
+        <div class="testi-card"><p class="testi-quote">"SPRK didn't just build a website — they built our brand online. Every detail is intentional."</p><div class="testi-author"><span class="testi-name">Ananya Krishnan</span><span class="testi-role">Co-Founder, Architecture Firm · Chennai</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"We tried two agencies before SPRK. Night and day difference. The site actually converts."</p><div class="testi-author"><span class="testi-name">Vikram Joshi</span><span class="testi-role">Founder, B2B SaaS · Pune</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"Fast, professional, genuinely creative. SPRK understood our vision immediately."</p><div class="testi-author"><span class="testi-name">Meera Sundar</span><span class="testi-role">Owner, Premium Restaurant · Hyderabad</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"SPRK took our 32-year-old shop online in 7 days. Premium, fast, and customers find us on Google now."</p><div class="testi-author"><span class="testi-name">Harsha Vardhan</span><span class="testi-role">Owner, S.S Aqua Feeds · Bhimavaram</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"Our new site doubled our enquiry rate in the first month. The contact flow just works."</p><div class="testi-author"><span class="testi-name">Pooja Agarwal</span><span class="testi-role">Founder, GlowSkin Studio · Jaipur</span></div></div>
+        <div class="testi-card"><p class="testi-quote">"Two agencies failed us before SPRK. The site they built actually converts — not just pretty, it works."</p><div class="testi-author"><span class="testi-name">Sandeep Kulkarni</span><span class="testi-role">Director, Kulkarni Logistics · Nagpur</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0;text-align:center">
+    <div class="wrap">
+      <h2 class="section-title">Start Your Project</h2>
+      <p style="color:var(--silver);margin-bottom:24px">Tell us your vision. We'll build something that makes your competitors take notes.</p>
+      <a class="btn btn-primary" href="#" onclick="showPage('about')">Contact for Service →</a>
+    </div>
+  </section>
+</div>
+
+<!-- ===== LEGAL ===== -->
+<div class="page" id="page-privacy"><section class="section"><div class="wrap"><p class="section-label">Policies</p><h2 class="section-title">Privacy Policy</h2><div style="color:var(--silver);font-size:.95rem;line-height:1.8;max-width:720px"><p style="margin-bottom:12px"><strong>Last updated: June 2026</strong></p><p style="margin-bottom:12px">We collect name, email, phone, service preferences, and messages via our contact form. We use this to respond to inquiries, deliver services, and improve. We don't sell or share data with third parties except trusted service providers. We retain data only as long as necessary. You can request access, correction, or deletion anytime. Contact: +91 91827 89496.</p></div></div></section></div>
+<div class="page" id="page-terms"><section class="section"><div class="wrap"><p class="section-label">Policies</p><h2 class="section-title">Terms of Service</h2><div style="color:var(--silver);font-size:.95rem;line-height:1.8;max-width:720px"><p style="margin-bottom:12px"><strong>Last updated: June 2026</strong></p><p style="margin-bottom:12px">By using SPRK services, you agree to these terms. Services include ATS resume optimization, AI chatbot development, and premium website development. Provide accurate information, use services lawfully. All content is SPRK property; deliverables transfer upon full payment. Liability limited to amount paid. Fees non-refundable except per Refund Policy. Terms may be modified at any time.</p></div></div></section></div>
+<div class="page" id="page-refund"><section class="section"><div class="wrap"><p class="section-label">Policies</p><h2 class="section-title">Refund Policy</h2><div style="color:var(--silver);font-size:.95rem;line-height:1.8;max-width:720px"><p style="margin-bottom:12px"><strong>Last updated: June 2026</strong></p><p style="margin-bottom:12px">Refunds handled case-by-case. Full refund if cancelled before work begins. If work started but not delivered, refund based on percentage completed. Once delivered, no refund unless deliverable doesn't meet agreed specs. Disputes: contact within 7 days for free revisions; unresolved cases may get partial/full refund. Processing: 7-14 business days. Contact: +91 91827 89496.</p></div></div></section></div>
 
 </main>
 
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>SPRK</h4>
+        <p style="color:var(--silver);font-size:.85rem;font-weight:300;line-height:1.6">Digital services: ATS resumes, AI chatbots, premium websites, and Solana token safety scanning. India-based, remote worldwide.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#" onclick="showPage('service-ats')">ATS Resumes</a>
+        <a href="#" onclick="showPage('service-ai')">AI Chatbots</a>
+        <a href="#" onclick="showPage('service-web')">Websites</a>
+        <a href="#" onclick="showPage('products')">SPRK Scanner</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('about')">Contact</a>
+        <a href="#" onclick="showPage('privacy')">Privacy</a>
+        <a href="#" onclick="showPage('terms')">Terms</a>
+        <a href="#" onclick="showPage('refund')">Refunds</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+919182789496">+91 91827 89496</a>
+        <a href="mailto:hello@sprkai.studio">hello@sprkai.studio</a>
+        <a href="https://wa.me/919182789496" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://scan.sprkai.studio" target="_blank" rel="noopener noreferrer">SPRK Scanner</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 SPRK. All rights reserved. · sprkai.studio</div>
+  </div>
+</footer>
+
+<a class="floating-cta" href="#" onclick="showPage('about')" aria-label="Get a free quote"><span>✦</span> Get a Free Quote</a>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Message sent — we'll be in touch ✦</div>
+
 <script>
-// IntersectionObserver for fade-in
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('fade-up');obs.unobserve(en.target)}})
-},{threshold:.1});
-document.querySelectorAll('.feature-row,.portfolio-image,.faq-row').forEach(el=>obs.observe(el));
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
+function anim(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(anim)}anim();
+document.querySelectorAll('a,button,.card,.service-card,.btn').forEach(el=>{el.addEventListener('mouseenter',()=>{cursor.style.width='18px';cursor.style.height='18px';ring.style.width='50px';ring.style.height='50px'});el.addEventListener('mouseleave',()=>{cursor.style.width='8px';cursor.style.height='8px';ring.style.width='40px';ring.style.height='40px'})});
+
+function showPage(name){if(event)event.preventDefault();document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const t=document.getElementById('page-'+name);if(t)t.classList.add('active');document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});closeMenu()}
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+function closeMenu(){document.getElementById('navLinks').classList.remove('open')}
+function handleSubmit(e){e.preventDefault();const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);e.target.reset()}
+
+const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('fade-up');obs.unobserve(en.target)}})},{threshold:.1});
+document.querySelectorAll('.service-card,.stat,.proof,.portfolio-image,.testi-card').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
