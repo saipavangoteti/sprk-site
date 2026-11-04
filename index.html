@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPRK — Ignite Your Potential</title>
-<meta name="description" content="SPRK helps freshers land jobs with ATS-optimized resumes, builds custom AI chatbots, and crafts premium websites. India-based, remote worldwide.">
+<title>SPRK — Trust the Token. Not the Hype.</title>
+<meta name="description" content="Scan Solana tokens with SPRK Scanner. Get a clear safety score, seven focused checks, and AI-powered risk analysis. Also building resumes, chatbots, and premium websites.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sprkai.studio/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,6 +178,167 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
   .floating-cta{bottom:16px;right:16px;padding:10px 18px;font-size:.7rem}
 }
 @media(max-width:480px){.hero h1{font-size:2rem}.stats{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+/* SPRK visual refresh — electric citron, ink, and editorial contrast */
+:root{
+  --bg:#090a08;--deep:#10120e;--card:#151811;--border:rgba(238,245,219,.12);
+  --accent:#c8ff4d;--accent-light:#dcff8a;--accent-dim:#8caf36;
+  --white:#f4f3eb;--silver:#b8bbaf;--silver-dim:#777c6e;
+  --glass:rgba(200,255,77,.035);--glass-border:rgba(238,245,219,.12);
+  --radius:18px;
+}
+html{scroll-padding-top:88px}
+body{background:var(--bg);background-image:radial-gradient(ellipse at 70% 4%,rgba(105,126,52,.11),transparent 38%)}
+::selection{background:var(--accent);color:#10120e}
+.wrap{max-width:1320px;padding-inline:clamp(22px,5vw,76px)}
+nav{padding:15px 0;background:rgba(9,10,8,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(238,245,219,.08)}
+.nav-logo{font-size:1.8rem;letter-spacing:-.09em}
+.nav-links{gap:clamp(14px,2.3vw,32px)}
+.nav-links a{font-size:.76rem;letter-spacing:.11em}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-cta{padding:11px 20px;border-radius:999px;background:var(--accent);color:#10120e!important;font-weight:700!important}
+.nav-cta:hover{background:var(--accent-light);box-shadow:0 8px 28px rgba(200,255,77,.18)}
+.hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.hamburger span{background:var(--white)}
+.hero{min-height:min(760px,calc(100svh - 70px));padding:74px 0 84px;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.19;background-image:linear-gradient(rgba(226,239,197,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(226,239,197,.08) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 88%);pointer-events:none}
+.hero-bg{background:radial-gradient(ellipse 44% 60% at 76% 48%,rgba(200,255,77,.12),transparent 70%),radial-gradient(ellipse 55% 50% at 0% 18%,rgba(200,255,77,.05),transparent 72%)}
+.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(340px,.85fr);gap:clamp(35px,7vw,110px)}
+.hero-content{max-width:700px}
+.hero-eyebrow,.section-label{color:var(--accent);font-size:.68rem;letter-spacing:.2em;font-weight:600}
+.hero-eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:26px}
+.hero-eyebrow::before{content:"";width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px rgba(200,255,77,.75)}
+.hero h1{font-size:clamp(3.6rem,7.6vw,7.25rem);line-height:.91;letter-spacing:-.085em;font-weight:600;margin-bottom:25px;text-wrap:balance}
+.hero h1 .accent{color:var(--accent)}
+.hero-sub{font-size:clamp(1rem,1.3vw,1.16rem);color:#b8bbaf;max-width:490px;line-height:1.75;margin-bottom:30px}
+.hero-actions{gap:12px}
+.btn{min-height:50px;padding:13px 23px;border-radius:999px;letter-spacing:.035em;font-size:.78rem}
+.btn-primary{background:var(--accent);color:#0c0e08;font-weight:700}
+.btn-primary:hover{background:var(--accent-light);box-shadow:0 12px 32px rgba(200,255,77,.2)}
+.btn-outline{border-color:rgba(244,243,235,.22);color:var(--white)}
+.btn-outline:hover{border-color:var(--accent);background:rgba(200,255,77,.06)}
+.hero-note{margin-top:18px;font-size:.76rem;color:var(--silver-dim);letter-spacing:.02em}
+.hero-note strong{color:var(--silver);font-weight:500}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:430px;animation-delay:.35s}
+.scanner-card{position:relative;width:min(100%,470px);padding:24px 26px 20px;border:1px solid rgba(230,240,210,.16);border-radius:22px;background:linear-gradient(145deg,rgba(26,30,20,.96),rgba(13,15,11,.97));box-shadow:0 35px 100px rgba(0,0,0,.55),inset 0 1px rgba(255,255,255,.07);transform:rotate(2.2deg);transition:transform .45s var(--ease-out),border-color .45s}
+.scanner-card:hover{transform:rotate(0) translateY(-5px);border-color:rgba(200,255,77,.42)}
+.scanner-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:17px;border-bottom:1px solid var(--glass-border)}
+.scanner-brand{font-family:var(--font-display);font-weight:700;letter-spacing:-.04em;font-size:.95rem}
+.scanner-brand span{color:var(--accent)}
+.scanner-network{display:inline-flex;align-items:center;gap:7px;color:#aeb2a3;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase}
+.scanner-network::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.scanner-art{height:236px;position:relative;display:grid;place-items:center;overflow:hidden}
+.scanner-art::before,.scanner-art::after{content:"";position:absolute;border:1px solid rgba(200,255,77,.16);border-radius:50%;aspect-ratio:1}
+.scanner-art::before{width:215px;animation:orbit 24s linear infinite}
+.scanner-art::after{width:155px;border-style:dashed;border-color:rgba(200,255,77,.28);animation:orbit 36s linear infinite reverse}
+.scanner-orb{width:102px;height:102px;display:grid;place-items:center;border-radius:50%;color:var(--accent);font-size:3rem;background:radial-gradient(circle at 50% 55%,rgba(200,255,77,.18),rgba(200,255,77,.025) 66%,transparent 68%);text-shadow:0 0 28px rgba(200,255,77,.5);animation:orbPulse 4s ease-in-out infinite}
+.scanner-cross{position:absolute;width:260px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,255,77,.48),transparent);transform:rotate(-28deg);animation:scanline 4.5s ease-in-out infinite}
+.scanner-caption{position:absolute;bottom:17px;left:0;right:0;text-align:center;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#8e9383}
+.scanner-readout{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--glass-border);padding-top:16px}
+.scanner-readout div{text-align:center;border-right:1px solid var(--glass-border)}
+.scanner-readout div:last-child{border:0}
+.scanner-readout strong{display:block;color:var(--white);font:600 1.05rem var(--font-display);letter-spacing:-.04em}
+.scanner-readout span{display:block;margin-top:3px;font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:#929789}
+.hero-scroll{display:none}
+.section{padding:clamp(76px,9vw,132px) 0}
+.section-label{margin-bottom:14px}
+.section-title{font-size:clamp(2.7rem,5vw,5rem);letter-spacing:-.075em;line-height:.98;margin-bottom:18px}
+.section-sub{font-size:1.02rem;max-width:550px;margin-bottom:38px}
+.services-grid{gap:14px;margin-top:42px}
+.service-card{padding:31px 28px;background:linear-gradient(155deg,#171a13,#11130f);border:1px solid rgba(238,245,219,.1);border-radius:17px;transition:transform .35s var(--ease-out),border-color .35s,background .35s}
+.service-card:hover{border-color:rgba(200,255,77,.42);background:#191d13;transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,.26)}
+.service-card h3{font-size:1.35rem;letter-spacing:-.045em}
+.service-card p{font-size:.89rem;line-height:1.75}
+.service-card .price{color:var(--accent);font-size:1.18rem}
+.service-card ul li::before{color:var(--accent)}
+.service-card .btn{margin-top:18px!important}
+.portfolio-section,.faq-section{background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 50%),#0e100c}
+.portfolio-grid{gap:clamp(32px,6vw,88px)}
+.portfolio-image{border:1px solid rgba(238,245,219,.12);border-radius:16px;box-shadow:0 25px 65px rgba(0,0,0,.42);transform:none}
+.portfolio-image:hover{transform:translateY(-4px);box-shadow:0 35px 85px rgba(0,0,0,.55)}
+.portfolio-content h3{font-size:clamp(1.7rem,2.5vw,2.5rem);letter-spacing:-.06em}
+.portfolio-metric .num{color:var(--accent);letter-spacing:-.06em}
+.portfolio-metric .lbl{letter-spacing:.11em}
+.testi-card{background:#141610;border-color:rgba(238,245,219,.1);border-radius:16px}
+.testi-card:hover{border-color:rgba(200,255,77,.28)}
+.testi-quote{font-size:1rem}
+.faq-item{border-color:rgba(238,245,219,.1)}
+.faq-item summary{font-size:1.08rem;min-height:44px}
+.faq-item summary::after{color:var(--accent)}
+.faq-item[open] summary{color:var(--accent)}
+.contact-section{padding:clamp(80px,10vw,140px) 0}
+.contact-section h2{letter-spacing:-.075em}
+.footer{border-top:1px solid rgba(238,245,219,.11);margin-top:20px}
+.footer h4{color:var(--white);letter-spacing:-.03em}
+.footer a:hover{color:var(--accent)}
+.floating-cta{right:28px;bottom:26px;border-radius:999px;background:var(--accent);color:#11140b;box-shadow:0 12px 32px rgba(0,0,0,.35);font-weight:700;letter-spacing:.045em;min-height:48px}
+.floating-cta:hover{box-shadow:0 15px 38px rgba(200,255,77,.2)}
+.statement-panel{padding:clamp(32px,6vw,74px)!important;border:1px solid rgba(200,255,77,.18)!important;border-radius:22px!important;background:radial-gradient(ellipse at 88% 12%,rgba(200,255,77,.11),transparent 44%),linear-gradient(140deg,#151811,#0e100c)!important}
+.statement-panel>div:first-child{display:none}
+.statement-panel h2{max-width:720px;letter-spacing:-.075em}
+.statement-panel p{font-size:1.02rem;line-height:1.75}
+.page.active{animation:pageIn .5s var(--ease-out)}
+.fade-up{animation:fadeUp .65s var(--ease-out) both}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes orbPulse{50%{transform:scale(1.07);filter:brightness(1.2)}}
+@keyframes scanline{0%,100%{opacity:.16;transform:translateY(-52px) rotate(-28deg)}50%{opacity:.8;transform:translateY(52px) rotate(-28deg)}}
+@media(max-width:900px){
+  .hero{min-height:auto;padding:72px 0 78px}
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(300px,.82fr);gap:30px}
+  .hero h1{font-size:clamp(3.4rem,8vw,5.5rem)}
+  .hero-visual{min-height:350px}
+  .scanner-card{padding:19px 20px 16px}
+  .scanner-art{height:205px}
+}
+@media(max-width:768px){
+  .floating-cta{display:none}
+  nav .wrap{position:relative}
+  .nav-links{top:calc(100% + 15px);left:22px;right:22px;padding:12px 18px;background:rgba(15,17,12,.98);border:1px solid rgba(238,245,219,.12);border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.48)}
+  .nav-links a{min-height:48px;display:flex;align-items:center;border-bottom:1px solid rgba(238,245,219,.08)}
+  .nav-links a:last-child{border:0}
+  .nav-links .nav-cta{justify-content:center;margin:8px 0}
+  .hero{padding:58px 0 70px;min-height:0}
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .hero-content{order:0}
+  .hero-visual{order:1;min-height:0;margin:0 auto;width:min(100%,470px)}
+  .hero h1{font-size:clamp(3.7rem,12vw,6rem);max-width:11ch}
+  .hero-sub{max-width:40ch}
+  .scanner-card{transform:rotate(1deg)}
+  .services-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .portfolio-grid{grid-template-columns:1fr;gap:30px}
+  .portfolio-image{max-width:680px}
+  .faq-grid{grid-template-columns:1fr;gap:22px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .section{padding:78px 0}
+  .floating-cta{bottom:16px;right:16px}
+}
+@media(max-width:540px){
+  .wrap{padding-inline:22px}
+  .hero{padding-top:43px}
+  .hero h1{font-size:clamp(3.35rem,15vw,4.6rem);letter-spacing:-.09em}
+  .hero-eyebrow{font-size:.61rem;letter-spacing:.16em}
+  .hero-actions{align-items:stretch;flex-direction:column;max-width:300px}
+  .hero-actions .btn{justify-content:center}
+  .hero-visual{width:100%}
+  .scanner-card{padding:16px 15px 14px;border-radius:18px}
+  .scanner-art{height:185px}
+  .scanner-art::before{width:175px}.scanner-art::after{width:132px}
+  .scanner-readout strong{font-size:.95rem}.scanner-readout span{font-size:.51rem}
+  .section{padding:68px 0}
+  .section-title{font-size:clamp(2.65rem,12vw,3.8rem)}
+  .services-grid,.testi-grid{grid-template-columns:1fr;gap:12px}
+  .service-card{padding:27px 23px}
+  .portfolio-metrics{gap:14px}
+  .portfolio-metric .num{font-size:1.85rem}
+  .stats{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:25px 18px}
+  .footer-grid>div:first-child{grid-column:1/-1}
+  .contact-info{gap:24px}
+  .floating-cta{font-size:.65rem;padding:11px 17px}
+}
+@media(prefers-reduced-motion:reduce){
+  .scanner-art::before,.scanner-art::after,.scanner-orb,.scanner-cross{animation:none!important}
+  .scanner-card,.service-card,.portfolio-image{transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -186,9 +347,9 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
 <nav>
   <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%">
     <a class="nav-logo" href="#" onclick="showPage('home')">SPRK</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
-      <a href="#" onclick="showPage('home')" data-page="home">Home</a>
+      <a href="#" onclick="showPage('home')" data-page="home" class="active" aria-current="page">Home</a>
       <a href="#" onclick="showPage('products')" data-page="products">Products</a>
       <a href="#" onclick="showPage('about')" data-page="about">About</a>
       <a href="#" onclick="showPage('service-ats')" data-page="service-ats">Resumes</a>
@@ -204,45 +365,36 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
 <!-- ===== HOME ===== -->
 <div class="page active" id="page-home">
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-content">
-          <p class="hero-eyebrow">India-based · Remote Worldwide</p>
-          <h1>Where ambition<br><span class="accent">meets execution.</span></h1>
-          <p class="hero-sub">ATS resumes that get callbacks. AI chatbots that never sleep. Websites that convert. Premium digital services for businesses that refuse to be ordinary.</p>
+          <p class="hero-eyebrow">SPRK Scanner · Solana token safety</p>
+          <h1>Trust the token.<br><span class="accent">Not the hype.</span></h1>
+          <p class="hero-sub">Scan any Solana token before you buy. Get a clear safety score, seven focused checks, and an AI analysis that helps you spot the risks.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#" onclick="showPage('about')">Get a Free Quote →</a>
-            <a class="btn btn-outline" href="#" onclick="showPage('service-web')">See Our Work</a>
+            <a class="btn btn-primary" href="https://scan.sprkai.studio/" target="_blank" rel="noopener noreferrer">Scan a Token <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="#" onclick="showPage('products')">Explore SPRK</a>
           </div>
+          <p class="hero-note"><strong>Free to start</strong> · Quick Scan ₹249 · Deep Scan ₹829</p>
         </div>
-        <div class="hero-visual" style="display:flex;align-items:center;justify-content:center">
-          <svg id="heroBot" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;height:auto;filter:drop-shadow(0 0 24px rgba(90,155,252,0.2))">
-            <!-- Antenna -->
-            <line x1="100" y1="20" x2="100" y2="45" stroke="#5a9bfc" stroke-width="2"/>
-            <circle cx="100" cy="14" r="6" fill="#5a9bfc" opacity="0.9"/>
-            <circle cx="100" cy="14" r="12" fill="none" stroke="#5a9bfc" stroke-width="1" opacity="0.3"/>
-            <!-- Head -->
-            <rect x="50" y="45" width="100" height="80" rx="20" fill="#111111" stroke="#5a9bfc" stroke-width="2"/>
-            <!-- Eyes -->
-            <circle cx="75" cy="75" r="14" fill="#000000" stroke="#5a9bfc" stroke-width="1.5"/>
-            <circle cx="125" cy="75" r="14" fill="#000000" stroke="#5a9bfc" stroke-width="1.5"/>
-            <circle id="botPupilL" cx="75" cy="75" r="7" fill="#5a9bfc"/>
-            <circle id="botPupilR" cx="125" cy="75" r="7" fill="#5a9bfc"/>
-            <circle id="botHighlightL" cx="78" cy="72" r="2.5" fill="#b3f5fa" opacity="0.8"/>
-            <circle id="botHighlightR" cx="128" cy="72" r="2.5" fill="#b3f5fa" opacity="0.8"/>
-            <!-- Mouth -->
-            <rect x="70" y="100" width="60" height="12" rx="6" fill="#000000" stroke="#5a9bfc" stroke-width="1.5"/>
-            <rect id="mouthBar" x="75" y="103" width="12" height="6" rx="3" fill="#5a9bfc" opacity="0.7"/>
-            <!-- Side panels -->
-            <rect x="40" y="60" width="8" height="35" rx="4" fill="#111111" stroke="#5a9bfc" stroke-width="1.5"/>
-            <rect x="152" y="60" width="8" height="35" rx="4" fill="#111111" stroke="#5a9bfc" stroke-width="1.5"/>
-            <!-- Body -->
-            <rect x="60" y="130" width="80" height="45" rx="12" fill="#111111" stroke="#5a9bfc" stroke-width="1.5" opacity="0.7"/>
-            <circle cx="85" cy="152" r="4" fill="#5a9bfc" opacity="0.5"/>
-            <circle cx="115" cy="152" r="4" fill="#5a9bfc" opacity="0.5"/>
-            <rect x="90" y="138" width="20" height="8" rx="4" fill="#5a9bfc" opacity="0.3"/>
-          </svg>
+        <div class="hero-visual" aria-label="SPRK Scanner product preview">
+          <div class="scanner-card">
+            <div class="scanner-head">
+              <div class="scanner-brand">SPRK <span>SCANNER</span></div>
+              <div class="scanner-network">Solana network</div>
+            </div>
+            <div class="scanner-art" aria-hidden="true">
+              <div class="scanner-cross"></div>
+              <div class="scanner-orb">✳</div>
+              <span class="scanner-caption">Scan clearly. Move confidently.</span>
+            </div>
+            <div class="scanner-readout">
+              <div><strong>7</strong><span>Safety checks</span></div>
+              <div><strong>0–100</strong><span>Safety score</span></div>
+              <div><strong>AI</strong><span>Risk analysis</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -283,7 +435,7 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
 
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <div style="background:var(--deep);border:1px solid var(--glass-border);border-radius:var(--radius);padding:48px;position:relative;overflow:hidden;background-image:url('https://picsum.photos/id/1067/1200/400');background-size:cover;background-position:center">
+      <div class="statement-panel">
         <div style="position:absolute;inset:0;background:rgba(5,5,7,.88)"></div>
         <div style="position:relative;z-index:1">
         <h2 class="section-title" style="margin-bottom:12px">We don't build ordinary.</h2>
@@ -395,7 +547,7 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
       <p style="color:var(--silver);max-width:600px;font-weight:300;margin-bottom:32px">We reverse-engineer what ATS scanners look for and build resumes that score high before a recruiter even blinks. Tailored for freshers ready to break in.</p>
       <div class="services-grid">
         <div class="service-card"><h3>Starter</h3><div class="price">₹999</div><ul><li>1 revision</li><li>Delivery in 2 days</li><li>ATS-optimized format</li></ul></div>
-        <div class="service-card" style="border-color:var(--indigo)"><h3>Professional ⭐</h3><div class="price">₹1,999</div><ul><li>ATS Resume + LinkedIn optimization</li><li>2 revisions</li><li>Cover letter included</li></ul></div>
+        <div class="service-card" style="border-color:var(--accent)"><h3>Professional ⭐</h3><div class="price">₹1,999</div><ul><li>ATS Resume + LinkedIn optimization</li><li>2 revisions</li><li>Cover letter included</li></ul></div>
         <div class="service-card"><h3>Premium</h3><div class="price">₹3,499</div><ul><li>ATS Resume + LinkedIn + Cover Letter</li><li>Job strategy call (30 min)</li><li>Unlimited revisions for 7 days</li></ul></div>
       </div>
     </div>
@@ -405,9 +557,9 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
       <p class="section-label">Real Results</p>
       <h2 class="section-title">Case Studies</h2>
       <div class="services-grid">
-        <div class="service-card"><h3>From 0 Callbacks to 6 Interviews</h3><p>A BE CSE fresher applied to 40+ companies with zero response. SPRK rebuilt the resume → 6 interview calls in 21 days.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">40+ ignored → 6 calls</div></div>
-        <div class="service-card"><h3>Cracking FMCG Shortlists</h3><p>An MBA fresher got shortlisted by 3 of 5 FMCG companies after SPRK restructured around transferable skills and metrics.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">3/5 shortlisted</div></div>
-        <div class="service-card"><h3>Passing Mass Recruitment ATS</h3><p>A B.Tech grad's ATS score jumped from 34% to 91% after SPRK aligned format to standard parsers.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">34% → 91%</div></div>
+        <div class="service-card"><h3>From 0 Callbacks to 6 Interviews</h3><p>A BE CSE fresher applied to 40+ companies with zero response. SPRK rebuilt the resume → 6 interview calls in 21 days.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">40+ ignored → 6 calls</div></div>
+        <div class="service-card"><h3>Cracking FMCG Shortlists</h3><p>An MBA fresher got shortlisted by 3 of 5 FMCG companies after SPRK restructured around transferable skills and metrics.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">3/5 shortlisted</div></div>
+        <div class="service-card"><h3>Passing Mass Recruitment ATS</h3><p>A B.Tech grad's ATS score jumped from 34% to 91% after SPRK aligned format to standard parsers.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">34% → 91%</div></div>
       </div>
     </div>
   </section>
@@ -444,7 +596,7 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
       <a class="btn btn-outline" href="https://gharbot.streamlit.app" target="_blank" rel="noopener noreferrer" style="margin-bottom:32px">Demo — Try Now →</a>
       <div class="services-grid">
         <div class="service-card"><h3>Starter</h3><div class="price">₹14,999</div><ul><li>FAQ chatbot</li><li>Website integration</li><li>Up to 100 Q&A</li></ul></div>
-        <div class="service-card" style="border-color:var(--indigo)"><h3>Growth ⭐</h3><div class="price">₹34,999</div><ul><li>Custom chatbot</li><li>Lead capture</li><li>WhatsApp / API integration</li><li>Analytics dashboard</li></ul></div>
+        <div class="service-card" style="border-color:var(--accent)"><h3>Growth ⭐</h3><div class="price">₹34,999</div><ul><li>Custom chatbot</li><li>Lead capture</li><li>WhatsApp / API integration</li><li>Analytics dashboard</li></ul></div>
         <div class="service-card"><h3>Business</h3><div class="price">₹69,999+</div><ul><li>RAG chatbot</li><li>Multiple data sources</li><li>Custom UI</li><li>Full deployment</li></ul></div>
       </div>
     </div>
@@ -454,9 +606,9 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
       <p class="section-label">Real Results</p>
       <h2 class="section-title">Case Studies</h2>
       <div class="services-grid">
-        <div class="service-card"><h3>24/7 Support Without a Team</h3><p>A D2C brand spent ₹1.8L/month on 4 support agents. SPRK's chatbot handled 83% of tickets — 60% cost reduction in month one.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">−60% support cost</div></div>
-        <div class="service-card"><h3>Lead Qualification at Scale</h3><p>An EdTech platform's chatbot leads converted 3.2× higher than form submissions.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">3.2× conversion</div></div>
-        <div class="service-card"><h3>Site Visits on Autopilot</h3><p>A real estate chatbot booked 40+ site visits in month one with zero manual intervention.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">40+ visits booked</div></div>
+        <div class="service-card"><h3>24/7 Support Without a Team</h3><p>A D2C brand spent ₹1.8L/month on 4 support agents. SPRK's chatbot handled 83% of tickets — 60% cost reduction in month one.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">−60% support cost</div></div>
+        <div class="service-card"><h3>Lead Qualification at Scale</h3><p>An EdTech platform's chatbot leads converted 3.2× higher than form submissions.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">3.2× conversion</div></div>
+        <div class="service-card"><h3>Site Visits on Autopilot</h3><p>A real estate chatbot booked 40+ site visits in month one with zero manual intervention.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">40+ visits booked</div></div>
       </div>
     </div>
   </section>
@@ -491,7 +643,7 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
       <p style="color:var(--silver);max-width:600px;font-weight:300;margin-bottom:32px">High-performance digital experiences built to convert, built to impress, built to last. We don't do templates — every website is custom-crafted.</p>
       <div class="services-grid">
         <div class="service-card"><h3>Landing Page</h3><div class="price">₹14,999</div><ul><li>Single page</li><li>Responsive design</li><li>Contact form</li></ul></div>
-        <div class="service-card" style="border-color:var(--indigo)"><h3>Business ⭐</h3><div class="price">₹29,999</div><ul><li>5–8 pages</li><li>Responsive + SEO</li><li>Analytics + forms</li></ul></div>
+        <div class="service-card" style="border-color:var(--accent)"><h3>Business ⭐</h3><div class="price">₹29,999</div><ul><li>5–8 pages</li><li>Responsive + SEO</li><li>Analytics + forms</li></ul></div>
         <div class="service-card"><h3>Premium Brand</h3><div class="price">₹59,999–99,999</div><ul><li>Custom animations</li><li>CMS integration</li><li>Blog setup</li><li>Speed + SEO</li></ul></div>
       </div>
     </div>
@@ -522,9 +674,9 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
       <p class="section-label">Real Results</p>
       <h2 class="section-title">Case Studies</h2>
       <div class="services-grid">
-        <div class="service-card"><h3>Portfolio That Wins</h3><p>A freelance designer went from 0 to 4 inbound clients in 60 days after SPRK built their portfolio site.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">4 clients in 60 days</div></div>
-        <div class="service-card"><h3>Restaurant → Digital</h3><p>A Hyderabad restaurant went from 0 to 120 online bookings/month after SPRK built their site.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">120 bookings/mo</div></div>
-        <div class="service-card"><h3>Landing Page 2× Conversions</h3><p>A SaaS startup's conversion went from 1.8% to 4.1% after SPRK redesigned their landing page.</p><div style="color:var(--indigo);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">1.8% → 4.1%</div></div>
+        <div class="service-card"><h3>Portfolio That Wins</h3><p>A freelance designer went from 0 to 4 inbound clients in 60 days after SPRK built their portfolio site.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">4 clients in 60 days</div></div>
+        <div class="service-card"><h3>Restaurant → Digital</h3><p>A Hyderabad restaurant went from 0 to 120 online bookings/month after SPRK built their site.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">120 bookings/mo</div></div>
+        <div class="service-card"><h3>Landing Page 2× Conversions</h3><p>A SaaS startup's conversion went from 1.8% to 4.1% after SPRK redesigned their landing page.</p><div style="color:var(--accent);font-family:var(--font-display);font-size:1.2rem;margin-top:8px">1.8% → 4.1%</div></div>
       </div>
     </div>
   </section>
@@ -592,56 +744,39 @@ footer{border-top:1px solid var(--glass-border);padding:48px 0 24px;margin-top:4
   </div>
 </footer>
 
-<a class="floating-cta" href="#" onclick="showPage('about')" aria-label="Get a free quote"><span>✦</span> Get a Free Quote</a>
+<a class="floating-cta" href="https://scan.sprkai.studio/" target="_blank" rel="noopener noreferrer" aria-label="Scan a Solana token"><span aria-hidden="true">✦</span> Scan a Token ↗</a>
 
 <div class="toast" id="toast" role="status" aria-live="polite">Message sent — we'll be in touch ✦</div>
 
 <script>
-const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
-function anim(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(anim)}anim();
-document.querySelectorAll('a,button,.card,.service-card,.btn').forEach(el=>{el.addEventListener('mouseenter',()=>{cursor.style.width='18px';cursor.style.height='18px';ring.style.width='50px';ring.style.height='50px'});el.addEventListener('mouseleave',()=>{cursor.style.width='8px';cursor.style.height='8px';ring.style.width='40px';ring.style.height='40px'})});
-
-function showPage(name){if(event)event.preventDefault();document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const t=document.getElementById('page-'+name);if(t)t.classList.add('active');document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===name));window.scrollTo({top:0,behavior:'smooth'});closeMenu()}
-function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
-function closeMenu(){document.getElementById('navLinks').classList.remove('open')}
+function showPage(name){
+  const navEvent=window.event;
+  if(navEvent&&typeof navEvent.preventDefault==='function')navEvent.preventDefault();
+  document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));
+  const target=document.getElementById('page-'+name);
+  if(target)target.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(link=>{
+    const selected=link.dataset.page===name;
+    link.classList.toggle('active',selected);
+    if(selected)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+  closeMenu();
+}
+function toggleMenu(){
+  const menu=document.getElementById('navLinks');
+  const button=document.getElementById('hamburger');
+  const isOpen=menu.classList.toggle('open');
+  button.setAttribute('aria-expanded',String(isOpen));
+}
+function closeMenu(){
+  const menu=document.getElementById('navLinks');
+  const button=document.getElementById('hamburger');
+  menu.classList.remove('open');
+  button.setAttribute('aria-expanded','false');
+}
 function handleSubmit(e){e.preventDefault();const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);e.target.reset()}
 
-// Eye tracking
-const bot=document.getElementById('heroBot');
-const pupilL=document.getElementById('botPupilL');
-const pupilR=document.getElementById('botPupilR');
-const hlL=document.getElementById('botHighlightL');
-const hlR=document.getElementById('botHighlightR');
-const mouthBar=document.getElementById('mouthBar');
-if(bot&&pupilL){
-  const updateBot=(cx,cy)=>{
-    const r=bot.getBoundingClientRect();
-    const ex=r.left+r.width/2;
-    const ey=r.top+r.height*0.35;
-    const dx=cx-ex;
-    const dy=cy-ey;
-    const dist=Math.sqrt(dx*dx+dy*dy);
-    const maxMove=8;
-    const moveX=(dx/dist||0)*Math.min(dist,maxMove);
-    const moveY=(dy/dist||0)*Math.min(dist,maxMove);
-    pupilL.setAttribute('cx',75+moveX);
-    pupilL.setAttribute('cy',75+moveY);
-    pupilR.setAttribute('cx',125+moveX);
-    pupilR.setAttribute('cy',75+moveY);
-    hlL.setAttribute('cx',78+moveX);
-    hlL.setAttribute('cy',72+moveY);
-    hlR.setAttribute('cx',128+moveX);
-    hlR.setAttribute('cy',72+moveY);
-    // Animate antenna based on distance
-    const ant=document.querySelector('#heroBot line');
-    if(ant){ant.setAttribute('y2',20+Math.min(dist/10,15));}
-  };
-  document.addEventListener('mousemove',e=>updateBot(e.clientX,e.clientY));
-  document.addEventListener('touchmove',e=>{if(e.touches.length>0)updateBot(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
-  document.addEventListener('touchstart',e=>{if(e.touches.length>0)updateBot(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
-}
 const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('fade-up');obs.unobserve(en.target)}})},{threshold:.1});
 document.querySelectorAll('.service-card,.stat,.portfolio-image,.testi-card').forEach(el=>obs.observe(el));
 </script>
